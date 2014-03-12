@@ -1,0 +1,834 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"total",
+				"totalSegundos"
+			],
+			[
+				"ea",
+				"each	.each()"
+			],
+			[
+				"script",
+				"script	HTML - Script"
+			],
+			[
+				"pedidos",
+				"pedidosfuturos"
+			],
+			[
+				"shipp",
+				"shipping_hour"
+			],
+			[
+				"shipping",
+				"shipping_date"
+			],
+			[
+				"curre",
+				"currentDate"
+			],
+			[
+				"load",
+				"load	.load"
+			],
+			[
+				"ready",
+				"ready	$(document).ready"
+			],
+			[
+				"order",
+				"orderid"
+			],
+			[
+				"clic",
+				"click	click"
+			],
+			[
+				"panel",
+				"panelRestaurante"
+			],
+			[
+				"offset",
+				"offset	.offset"
+			],
+			[
+				"off",
+				"offset	.offset"
+			],
+			[
+				"fecha",
+				"fechaEnvio"
+			],
+			[
+				"exlo",
+				"explode"
+			],
+			[
+				"var_",
+				"var_export"
+			],
+			[
+				"array",
+				"arrayHoras"
+			],
+			[
+				"var",
+				"var_export"
+			],
+			[
+				"pas",
+				"passwd"
+			],
+			[
+				"foreach",
+				"foreach	foreach …"
+			],
+			[
+				"whi",
+				"which"
+			],
+			[
+				"bot",
+				"both"
+			],
+			[
+				"forea",
+				"foreach	foreach …"
+			],
+			[
+				"countr",
+				"countries"
+			],
+			[
+				"mul",
+				"multiple	select/input HTML5"
+			],
+			[
+				"form",
+				"form	<form>"
+			],
+			[
+				"id_billin",
+				"id_billing_state"
+			],
+			[
+				"fore",
+				"foreach	foreach …"
+			],
+			[
+				"rea",
+				"ready	$(document).ready"
+			],
+			[
+				"date_def",
+				"date_default_timezone_set"
+			],
+			[
+				"from",
+				"fromDate"
+			],
+			[
+				"id_",
+				"id_billing_state"
+			],
+			[
+				"id_bill",
+				"id_billing_state"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"hei",
+				"height"
+			],
+			[
+				"z-in",
+				"z-index"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"contain",
+				"containerPopup"
+			],
+			[
+				"sub",
+				"submit	submit"
+			],
+			[
+				"jquery",
+				"jquery"
+			],
+			[
+				"id",
+				"id_lang"
+			],
+			[
+				"u",
+				"uppercase"
+			],
+			[
+				"_",
+				"_PS_USE_SQL_SLAVE_"
+			],
+			[
+				"req",
+				"require_once"
+			],
+			[
+				"heigh",
+				"height_logo"
+			],
+			[
+				"list",
+				"list_id"
+			],
+			[
+				"len",
+				"length"
+			],
+			[
+				"get",
+				"get	$.get()"
+			],
+			[
+				"imp",
+				"important"
+			],
+			[
+				"in",
+				"inherit"
+			],
+			[
+				"on",
+				"only"
+			],
+			[
+				"parse",
+				"parseInt"
+			],
+			[
+				"ref",
+				"refresh"
+			],
+			[
+				"stru",
+				"strtoupper"
+			],
+			[
+				"disable",
+				"disabled"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 104.0,
+		"selected_items":
+		[
+			[
+				"word",
+				"Word Wrap: Toggle"
+			],
+			[
+				"comment",
+				"Toggle Block Comment"
+			],
+			[
+				"smarty",
+				"Set Syntax: Smarty"
+			],
+			[
+				"book",
+				"Bookmarks: Toggle"
+			],
+			[
+				"bookmar",
+				"Bookmarks: Toggle"
+			],
+			[
+				"smart",
+				"Set Syntax: Smarty"
+			],
+			[
+				"bookma",
+				"Bookmarks: Select Next"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"commen",
+				"Toggle Block Comment"
+			],
+			[
+				"comme",
+				"Toggle Block Comment"
+			],
+			[
+				"indent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"comm",
+				"Toggle Block Comment"
+			],
+			[
+				"wo",
+				"Word Wrap: Toggle"
+			],
+			[
+				"com",
+				"Toggle Block Comment"
+			],
+			[
+				"comments",
+				"Snippet: IE Conditional Comment: HTML5 Shim"
+			],
+			[
+				"word wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"wordw",
+				"Word Wrap: Toggle"
+			],
+			[
+				"boo",
+				"Bookmarks: Toggle"
+			],
+			[
+				"bookmark",
+				"Bookmarks: Toggle"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"setinter",
+				"Snippet: setInterval"
+			],
+			[
+				"INDENT",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"UPLOAD",
+				"FTPSync: Upload current file"
+			],
+			[
+				"javascript",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"upload",
+				"FTPSync: Upload current file"
+			],
+			[
+				"uploa",
+				"FTPSync: Upload current file"
+			],
+			[
+				"jq",
+				"Set Syntax: jQuery (JavaScript)"
+			],
+			[
+				"css",
+				"Emmet: Reflect CSS Value"
+			],
+			[
+				"WORD",
+				"Word Wrap: Toggle"
+			],
+			[
+				"form",
+				"Snippet: bs3-form"
+			],
+			[
+				"line",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"jquery",
+				"Snippet: jQuery ready function"
+			],
+			[
+				"tag",
+				"Emmet: Remove Tag"
+			],
+			[
+				"mat",
+				"Emmet: Match Pair (inward)"
+			],
+			[
+				"inde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"inden",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"upl",
+				"FTPSync: Upload current file"
+			],
+			[
+				"uplo",
+				"FTPSync: Upload current file"
+			],
+			[
+				"setinterva",
+				"Snippet: interval"
+			],
+			[
+				"to",
+				"Toggle Block Comment"
+			],
+			[
+				"ftp",
+				"FTPSync: Browse"
+			],
+			[
+				"ftp ",
+				"FTPSync: Setup FTPSync in this folder"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"cm",
+				"Toggle Comment"
+			],
+			[
+				"lorem",
+				"Snippet: jQuery Plugin Boilerplate Minified"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 424.0
+	},
+	"console":
+	{
+		"height": 125.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/Gilson/swm-vps/httpdocs/creacioninmobiliaria/themes/creacion/header.tpl",
+		"/D/Gilson/swm-vps/httpdocs/creacioninmobiliaria/controllers/front/CmsController.php",
+		"/D/Gilson/swm-vps/httpdocs/creacioninmobiliaria/config/defines.inc.php",
+		"/D/Gilson/swm-vps/httpdocs/creacioninmobiliaria/classes/CMS.php",
+		"/D/Gilson/swm-vps/httpdocs/creacioninmobiliaria/themes/creacion/cms.tpl",
+		"/D/Gilson/swm-vps/httpdocs/creacioninmobiliaria/themes/creacion/cms_actualidad.tpl",
+		"/D/Gilson/swm-vps/httpdocs/creacioninmobiliaria/controllers/admin/AdminCmsController.php",
+		"/D/Gilson/swm-vps/httpdocs/creacioninmobiliaria/controllers/admin/AdminCmsContentController.php",
+		"/D/Gilson/swm-vps/httpdocs/creacioninmobiliaria/config/config.inc.php",
+		"/D/Gilson/swm-vps/httpdocs/creacioninmobiliaria/config/settings.inc.php",
+		"/D/Gilson/swm-vps/httpdocs/creacioninmobiliaria/controllers/admin/AdminCategoriesController.php",
+		"/D/Gilson/swm-vps/httpdocs/creacioninmobiliaria/classes/Category.php",
+		"/D/Gilson/swm-vps/httpdocs/creacioninmobiliaria/classes/Product.php",
+		"/D/Gilson/swm-vps/httpdocs/creacioninmobiliaria/classes/FeatureValue.php",
+		"/D/Gilson/swm-vps/httpdocs/creacioninmobiliaria/controllers/front/IndexController.php",
+		"/D/Gilson/Cursos MejorandoLa/Android/apps/test/www/config.xml",
+		"/D/Gilson/swm-vps/httpdocs/test.com/prestashop/app_mobile/iglesiadigital/platforms/android/AndroidManifest.xml",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/stockConfirm.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/classes/Product.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/themes/simpleresponsivetheme/404.tpl",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/classes/OrdenRepartidor.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/ajax/ajaxCargarOrdenesProduccion.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/repartidor/index.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/repartidor/cabecera.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/lib/funcionesRepartidor.js",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/repartidor/ajax/ajaxPendientesPorRecoger.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/themes/simpleresponsivetheme/shopping-cart.tpl",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/modules/eydatepicker/views/templates/hook/ordercarrier.tpl",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/lib/contador.js",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/lib/funciones.js",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/lib/funcionesHorarios.js",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/lib/funciones.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/controllers/admin/AdminOrdersController.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/index.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/test.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/ajax/ajaxRetrazarPedido.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/lib/funcionesRestaurante.js",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/classes/OrdenRestaurante.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/classes/order/Order.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/classes/CMS.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/billing_reject.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/ajax/ajaxNotificarRetrazo.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/ajax/ajaxCargarNuevasOrdenesRestaurante.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/themes/simpleresponsivetheme/order-carrier.tpl",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/modules/eydatepicker/controllers/time_interval.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/cabecera.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/classes/Orden.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/classes/Cart.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/controllers/front/OrderController.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/test.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/themes/simpleresponsivetheme/footer.tpl",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/pdf/invoice.tpl",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/pedidosfuturos.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/historial.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/modules/eydatepicker/eydatepicker.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/shippingDateSession.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/ajax/ajaxCargarOrden.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/modules/responsivetopbar/ajax-cart.js",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/ajaxCocinaDisponible.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/classes/shop/Shop.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/themes/simpleresponsivetheme/header.tpl",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/themes/simpleresponsivetheme/product-list.tpl",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/classes/controller/FrontController.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/themes/simpleresponsivetheme/index.tpl",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/controllers/front/OrderConfirmationController.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/controllers/front/ParentOrderController.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/classes/Tools.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/modules/eydatepicker/assets/js/app.js",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/index.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/classes/Horarios.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/horarios.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/modules/servired/servired.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/billing_details.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/classes/Currency.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/ajax/ajaxCargarPedidosFuturos.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/modules/eydatepicker/override/controllers/admin/AdminOrdersController.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/includes.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/ajax/ajaxActualizarEstado.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/ajax/ajaxGetOrderProducts.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/lib/estilos.css",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/profile.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/profile_user.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/ajax/ajaxSaveProductQuantyty.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/config/defines.inc.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/config/config.inc.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/pdf/footer.tpl",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/pdf/header.tpl",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/modules/responsivelinks/views/templates/hook/responsivelinkstop.tpl",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/modules/responsivetopbar/views/templates/hook/responsivetopbar.tpl",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/override/controllers/admin/AdminOrdersController.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/ajax/ajaxGuardarHorario.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/ajax/ajaxCargarOrdenesRestaurante.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/pedidosfutoros.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/themes/simpleresponsivetheme/css/global.css",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/modules/eydatepicker/override/classes/Mail.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/modules/eydatepicker/models/AppModel.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/modules/eydatepicker/models/Deliveryinfo.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/classes/module/Module.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/diasInactivos.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/lib/funcionesDiasInactivos.js",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/ajax/ajaxGuardaDiasInactivos.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/modules/relatedprod/relatedprod.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/modules/eydatepicker/controllers/admin.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/modules/eydatepicker/override/classes/Tools.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/modules/eydatepicker/manual.pdf",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/classes/Usuarios.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/billing.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/ajax/sessionVerify.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/repartidor/ajax/ajaxPendientesPorEntregar.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/repartidor/ajax/ajaxActualizarEstado.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/repartidor/includes.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/billing_accept.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/classes/Factura.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/classes/Image.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/classes/ProductSale.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/controllers/admin/AdminSessioncloseController.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/cpanel/themes/default/template/controllers/sessionclose/content.tpl",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/cpanel/themes/default/template/controllers/weekend/content.tpl",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/cpanel/themes/default/template/controllers/billing/content.tpl",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/themes/simpleresponsivetheme/css/AdminGlobalsController.css",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/controllers/admin/AdminWeekendController.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/controllers/front/ProductController.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/modules/relatedprod/assets/css/related_products.css",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/modules/relatedprod/views/templates/hooks/related_products_simple.tpl",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/themes/simpleresponsivetheme/product.tpl",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/controllers/admin/AdminBillingController.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/classes/Configuration.php",
+		"/D/Gilson/swm-vps/httpdocs/elmenuacasa.com/panel/restaurante/billing_pending.php"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"D:\\Gilson\\swm-vps\\httpdocs\\elmenuacasa.com\\cpanel"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"time",
+			"deleteSelection",
+			"echo",
+			"value",
+			"features",
+			"attributes",
+			"image",
+			"AdminCmsController",
+			"renderForm",
+			"admin_cms",
+			"image",
+			"__construct",
+			"CMS",
+			"_CMS_",
+			"modificarEstado",
+			"0",
+			"retraz",
+			"scriptInstanciaContador",
+			"cuentaRegresiva",
+			"procesarScript",
+			"segundos",
+			"cerrarOrden",
+			"estado",
+			"procesarPedidosPorRecoger",
+			"getLineasPedidosPorRecoger",
+			"CUENTA_ATRAS_RECOGER",
+			"ue(id_order_state)",
+			"porRecoger",
+			"pendientesPorRecoger",
+			"intervaloRecoger",
+			"id_order_state",
+			"function modificarEstado",
+			"state",
+			"getInfoParaContador",
+			"retrazarPedido",
+			"getFilasEnProduccion",
+			"setIntervaloEnProduccion",
+			"botones",
+			"getCurrentState",
+			"products",
+			"nbProducts",
+			"nbproduc",
+			"console",
+			"nuevas",
+			"validarCondiciones",
+			"getOrdenHTML",
+			"span",
+			"isSubmit",
+			"getcover",
+			"getBotonesAccion",
+			"minDate",
+			"beforeCarrier",
+			"displayShoppingCart",
+			"CartSave",
+			"processCarrier",
+			"actionValidateOrder",
+			"update",
+			"availabl",
+			"getCurrent",
+			"modificarEstado",
+			"down",
+			"count",
+			"getProducts",
+			"products",
+			"getBotonesAccion",
+			"reference",
+			"id_shop",
+			"reference",
+			"getOrdenCompleta",
+			"getOrdenHTML",
+			"date",
+			"$horario",
+			"estadoCocina",
+			"models",
+			"dia",
+			"Dia",
+			"horario.guardar()",
+			"left",
+			"Hook",
+			"email",
+			"lastname",
+			"name",
+			"set",
+			"pendientesPorRecoger",
+			"intervaloRecoger",
+			"cambiarEstado",
+			"Insert",
+			"product",
+			"get",
+			"name",
+			"pendientesPorEntregar",
+			"toDate",
+			"h5",
+			"Hook",
+			"updateValue",
+			"echo",
+			"star",
+			"Start",
+			"start",
+			"START",
+			"PS_WEEKEND_START_DAY",
+			"startDay",
+			"today",
+			"shipping_cost",
+			"cart_block_shipping_cost",
+			"shippingCostFloat",
+			"pdf",
+			"form",
+			"fax",
+			"Fax",
+			"fax",
+			"Configuration::",
+			"pdf",
+			"address2",
+			"controlGroup",
+			"2",
+			"->update",
+			")->update",
+			";\"",
+			"boton",
+			"addJ",
+			"add",
+			"shop",
+			"context",
+			"form",
+			"_GET",
+			"_POST",
+			"a"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			">'."
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 30.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 130.0
+	},
+	"project": "icelular.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 265.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

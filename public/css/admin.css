@@ -1,0 +1,120 @@
+
+/**
+ * 	Fila seleccionada de las tablas
+ */
+.selected_row{
+	background-color:#428BCA !important;
+	color:#fff !important;
+}
+.selected_row a{
+	color:#fff !important;
+}
+/**************************/
+
+/**
+ * 	Menú de navegación lateral
+ */
+.nav_header > a, .nav_header > a:hover{
+	color:#fff !important;
+	cursor:pointer;
+	background-color:#D68E0A !important;
+}
+/** fin menú de navegación lateral **/
+	
+/**
+ * 	Botones de opción para las secciones de administración
+ */
+#option_buttons > a{
+	display:inline-block;
+	margin-right:10px;
+	padding:50px 10px 5px 10px;
+	border-radius:5px;
+	box-shadow:1px 0 3px rgba(0,0,0,0.3);
+}
+#option_buttons > a:last-child{
+	margin-right:0;
+}
+#option_buttons > a:hover{
+	box-shadow:1px 0 3px rgba(0,0,0,0.5);
+	text-decoration:none;
+}
+/** fin Botones de opción para las secciones de administración **/
+	
+/**
+ * 	Header
+ */
+header{
+	padding-top:30px;
+	padding-bottom:20px;
+	margin-bottom:10px;
+	border-bottom:1px #E3E3E3 solid;
+}
+/** fin Header **/
+	
+
+/**
+ * 	GESTIÓN DE ATRIBUTOS
+ */
+.item_attr_group{
+	border-bottom: 1px #428BCA solid;
+	margin-bottom:10px;
+	position:relative;
+}
+.item_attr_group h3{
+	color:#244B6B;
+	padding:15px;
+	margin:0;
+	
+	background: #eeeeee; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjY2NjY2MiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #eeeeee 0%, #cccccc 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#cccccc)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #eeeeee 0%,#cccccc 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #eeeeee 0%,#cccccc 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #eeeeee 0%,#cccccc 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #eeeeee 0%,#cccccc 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-8 */
+}
+.item_attr_group > .commands{
+	display:none;
+}
+.item_attr_group:hover > .commands{
+	display:block;
+}
+.item_attr_group > .commands{
+	position:absolute;
+	right:10px;
+	top:5px;
+	list-style:none;
+	margin:0;
+	padding:0;
+	z-index:100;
+}
+.item_attr_group > .commands li{
+	display:inline-block;
+	margin-right:10px;
+	cursor:pointer;
+}
+.item_attr_group .attr{
+	display:none;
+}
+.item_attr_group .attr ul{
+	list-style:none;
+}
+.item_attr_group .attr ul li{
+	border-bottom:1px #D1D2D3 solid;
+	padding:0 5px;
+}
+.item_attr_group .attr .attr_edit,
+.item_attr_group .attr .attr_delete{
+	display:inline-block;
+	margin-right:10px;
+	color:#00437A;
+	cursor:pointer;
+}
+form.edit_attributes_group,
+form.edit_attribute{
+	display:none;
+}
+/** FIN GESTIÓN DE ATRIBUTOS **/
