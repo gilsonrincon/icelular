@@ -1,56 +1,209 @@
+@import url(http://fonts.googleapis.com/css?family=Signika+Negative);
+
+.container{
+	position: relative;
+}
+
+#izquierda{
+	margin-top: 20px;
+}
 
 /**
  * 	Fila seleccionada de las tablas
  */
 .selected_row{
+	/*
 	background-color:#428BCA !important;
 	color:#fff !important;
+	*/
+	background-color:#f1f1f1 !important;
+	color:#000000 !important;
 }
 .selected_row a{
-	color:#fff !important;
+	/*color:#fff !important;*/
+	color:#000000 !important;
 }
 /**************************/
 
 /**
  * 	Menú de navegación lateral
  */
+
+#menu_lateral{
+	padding:0px;
+	padding-right: 20px;
+	font-family: 'Signika Negative', sans-serif;
+	font-size: 110%;
+}
+
+
+
 .nav_header > a, .nav_header > a:hover{
-	color:#fff !important;
+	border: 1px solid #BCE8F1 !important;
+	color:#074880 !important;
 	cursor:pointer;
-	background-color:#D68E0A !important;
+	/*background-color:#D68E0A !important;*/
+	background-color:#D9EDF7 !important;
+	border-radius: 0px !important;
+}
+
+.nav_header > ul > li a{
+	color: #000000;
+	font-size: 110%;
+	padding: 5px 10px;
+	margin: 5px 0px;
+	transition: all 0.6s;
+}
+
+.nav_header > ul > li a:hover{
+	color: #ffffff;
+	border-radius: 0px !important;
+	background:#428BCA;
+}
+
+.nav_header > ul > li.active a{
+	color: #ffffff;
+	border-radius: 0px !important;
+	background:#428BCA;
 }
 /** fin menú de navegación lateral **/
 	
 /**
  * 	Botones de opción para las secciones de administración
  */
+
+#option_buttons{
+	background-color: #ffffff;
+	border: none;
+	border-radius: 0px;
+	position: relative;
+}
+
 #option_buttons > a{
 	display:inline-block;
 	margin-right:10px;
 	padding:50px 10px 5px 10px;
-	border-radius:5px;
-	box-shadow:1px 0 3px rgba(0,0,0,0.3);
+	/*border-radius:5px;
+	box-shadow:1px 0 3px rgba(0,0,0,0.3);*/
+	font-family: 'Signika Negative', sans-serif;
+	color: #000000;
+	
 }
+
+#option_buttons .bt_new{
+	background-image: url(../img/nuevo_img.png);
+	background-repeat: no-repeat;
+	background-position: center 10px;
+}
+
+#option_buttons #btEliminar{
+	background-image: url(../img/eliminar_img.png);
+	background-repeat: no-repeat;
+	background-position: center 10px;
+}
+
+#option_buttons .bt_add{
+	background-image: url(../img/atributo_img.png);
+	background-repeat: no-repeat;
+	background-position: center 10px;
+}
+
+
 #option_buttons > a:last-child{
 	margin-right:0;
 }
-#option_buttons > a:hover{
-	box-shadow:1px 0 3px rgba(0,0,0,0.5);
+#option_buttons > .bt_new:hover{
+	box-shadow:0px 0 5px rgba(0,171,127,0.8);
 	text-decoration:none;
+	color:#00ab7f;
 }
+
+#option_buttons > #btEliminar:hover{
+	box-shadow:0px 0 5px rgba(174,26,25,0.8);
+	text-decoration:none;
+	color:#ae1a19;
+}
+
+
+#option_buttons > .bt_add:hover{
+	box-shadow:0px 0 5px rgba(255,154,53,0.8);
+	text-decoration:none;
+	color:#ff9a35;
+}
+
 /** fin Botones de opción para las secciones de administración **/
 	
 /**
  * 	Header
  */
 header{
-	padding-top:30px;
+	/*padding-top:30px;
 	padding-bottom:20px;
 	margin-bottom:10px;
-	border-bottom:1px #E3E3E3 solid;
+	border-bottom:1px #E3E3E3 solid;*/
+	/*background: #428BCA;
+	border-bottom:1px #BCE8F1 solid;*/
+    background: rgb(86,170,255); /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzU2YWFmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQ0JSIgc3RvcC1jb2xvcj0iIzRiYTBmNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM0MjhiY2EiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  rgba(86,170,255,1) 0%, rgba(75,160,244,1) 44%, rgba(66,139,202,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(86,170,255,1)), color-stop(44%,rgba(75,160,244,1)), color-stop(100%,rgba(66,139,202,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(86,170,255,1) 0%,rgba(75,160,244,1) 44%,rgba(66,139,202,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(86,170,255,1) 0%,rgba(75,160,244,1) 44%,rgba(66,139,202,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(86,170,255,1) 0%,rgba(75,160,244,1) 44%,rgba(66,139,202,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(86,170,255,1) 0%,rgba(75,160,244,1) 44%,rgba(66,139,202,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#56aaff', endColorstr='#428bca',GradientType=0 ); /* IE6-8 */
+}
+
+header h1{
+	margin: 0px;
+	font-family: 'Signika Negative', sans-serif;
+	color: #ffffff;
+	font-size: 180%;
+	padding: 10px 0px;
+	
 }
 /** fin Header **/
 	
+/****************************/
+/*******TOP MENU************/	
+#topMenu{
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	color: #ffffff;
+	font-size: 120%;
+}
+
+#topMenu a{
+	display: inline-block;
+	vertical-align: top;
+	font-family: 'Signika Negative', sans-serif;
+	color: #ffffff;
+}
+
+#topMenu a:hover{
+	text-decoration:none;
+}
+
+#topMenu form{
+	
+	display: inline-block;
+	vertical-align: top;
+	font-family: 'Signika Negative', sans-serif;
+	
+}
+	
+
+#topMenu form button{
+	padding:0px;
+	color: #ffffff;
+	font-size: 100%;
+}
+
+#topMenu form button:hover{
+	text-decoration: none;
+}
 
 /**
  * 	GESTIÓN DE ATRIBUTOS
@@ -85,11 +238,12 @@ header{
 .item_attr_group > .commands{
 	position:absolute;
 	right:10px;
-	top:5px;
+	top:20px;
 	list-style:none;
 	margin:0;
 	padding:0;
 	z-index:100;
+	font-family: 'Signika Negative', sans-serif; 
 }
 .item_attr_group > .commands li{
 	display:inline-block;
@@ -118,3 +272,84 @@ form.edit_attribute{
 	display:none;
 }
 /** FIN GESTIÓN DE ATRIBUTOS **/
+	
+
+/*****************/
+/*****FOOTER*****/
+
+footer{
+	text-align:center;
+	background: #e0e0e0;
+	font-family: 'Signika Negative', sans-serif;
+	font-size: 110%;
+	padding: 10px 0px;
+	margin-top: 20px;	
+}
+
+footer p{
+	margin: 0px;
+}
+
+
+/********************************/
+/******LISTAS GENERALES********/
+
+#productsList thead, #categorylist thead,  #storesList thead, #offerlist thead, #cmsList thead{
+	font-family: 'Signika Negative', sans-serif;
+}
+
+#productsList tbody a,  #categorylist tbody a,  #storesList tbody a, #offerlist tbody a,  #cmsList tbody a{
+	color: #000000;
+	
+}
+
+#productsList tbody a:hover, #storesList tbody a:hover, #categorylist tbody a:hover, #offerlist tbody a:hover, #cmsList tbody a:hover{
+	color: #52a6fb;
+	text-decoration: none;
+	
+}
+
+.img-responsive{
+	display: block;
+	margin: 0px auto;
+}
+
+.tip{
+	text-align:center;
+	display: block;
+}
+
+#contenido{
+	position: relative;
+}
+
+
+#contenido h2, #contenido h3, #contenido h4, .lead{
+	font-family: 'Signika Negative', sans-serif;
+}
+
+#contenido .btn.btn-default.btn-success{
+	display: block;
+	margin: 20px auto;
+}
+
+#contenido .btn.btn-default.btn-primary{
+	margin:10px 0px;
+}
+
+
+.form-horizontal input, .form-horizontal textarea {
+	border: 1px solid #dedede;
+}
+
+.form-horizontal input:focus , .form-horizontal textarea:focus{
+	border: 1px solid #3293D6 !important;
+	box-shadow: 0 0 5px #A9D3FF;
+	-webkit-box-shadow: 0 0 5px #A9D3FF;
+	-moz-box-shadow: 0 0 5px #A9D3FF;
+	-o-box-shadow: 0 0 5px #A9D3FF;  
+}
+
+.item_attr_group h3 .txt{
+	cursor: pointer;
+}

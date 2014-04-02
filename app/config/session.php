@@ -121,5 +121,9 @@ return array(
 	*/
 
 	'domain' => null,
-
+	
+	/**
+	 * Para actualizar de 4.0 - 4.1
+	 */
+	 'expire_on_close' => false,
 );

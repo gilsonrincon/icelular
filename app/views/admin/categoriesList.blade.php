@@ -23,9 +23,9 @@
 						</th>
 						<th @if($order_field=="position")class="ordering @if($order_dir=='asc') asc @else desc @endif"@endif>
 							@if($order_dir=='asc')
-								{{ link_to('admin/categories?page='.$page.'&order_field=position&order_dir=desc',"#", array('title'=>'Posición de la categoría', 'class'=>'tip')) }}
+								{{ link_to('admin/categories?page='.$page.'&order_field=position&order_dir=desc',"# ▼", array('title'=>'Posición de la categoría', 'class'=>'tip')) }}
 							@else
-								{{ link_to('admin/categories?page='.$page.'&order_field=position&order_dir=asc',"#", array('title'=>'Posición de la categoría', 'class'=>'tip')) }}
+								{{ link_to('admin/categories?page='.$page.'&order_field=position&order_dir=asc',"# ▲", array('title'=>'Posición de la categoría', 'class'=>'tip')) }}
 							@endif
 						</th>
 						<th @if($order_field=="name")class="ordering @if($order_dir=='asc') asc @else desc @endif"@endif>

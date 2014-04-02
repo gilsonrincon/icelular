@@ -23,9 +23,9 @@
 						</th>
 						<th @if($order_field=="name")class="ordering @if($order_dir=='asc') asc @else desc @endif"@endif>
 							@if($order_dir=='asc')
-								{{ link_to('admin/stores?page='.$page.'&order_field=name&order_dir=desc',"NOMBRE") }}
+								{{ link_to('admin/stores?page='.$page.'&order_field=name&order_dir=desc',"NOMBRE ▼") }}
 							@else
-								{{ link_to('admin/stores?page='.$page.'&order_field=name&order_dir=asc',"NOMBRE") }}
+								{{ link_to('admin/stores?page='.$page.'&order_field=name&order_dir=asc',"NOMBRE ▲") }}
 							@endif
 						</th>
 						<th @if($order_field=="email")class="ordering @if($order_dir=='asc') asc @else desc @endif"@endif>

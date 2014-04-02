@@ -36,7 +36,7 @@
 		<section class="container">
 			<header class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<h1>PANEL ADMINISTRATIVO PARA EL PORTAL ICELULAR.COM</h1>
+					<h1>PANEL ADMINISTRATIVO DEL PORTAL ICELULAR.COM</h1>
 				</div>
 			</header>
 			<nav id="topMenu">
@@ -102,7 +102,8 @@
 			
 			<footer class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					Pié de página
+					<p>icelular 2014 ©copyright  all rights reserved</p>
+					<p>Desarrollado por <a href="http://swm.com.co" target="_blank">STUDIOWEB & MARKETING</a></p>
 				</div>
 			</footer>
 		</section>

@@ -1,0 +1,60 @@
+@import url(http://fonts.googleapis.com/css?family=Signika+Negative);
+
+body{
+	background-color: #f1f1f1;
+	font-family: 'Signika Negative', sans-serif;	
+}
+
+h1{
+	margin: 0px;
+	text-align: center !important;
+	font-family: 'Signika Negative', sans-serif;
+	font-size:200%;
+	/*color: #4895fe;*/
+}
+
+#contenedor_ingresar{
+	width: 310px;
+	margin:0px auto;
+	background: #ffffff;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-o-boder-radius:3px;
+	-moz-box-shadow: 0 0 5px #888;
+	-webkit-box-shadow: 0 0 5px#888;
+	box-shadow: 0 0 5px #888;
+	padding:10px;
+	margin-top: 13%;
+}
+
+#contenedor_ingresar form{
+	padding-top: 15px;
+}
+
+#contenedor_ingresar form label{
+	margin: 0px;
+	font-weight: normal;
+}
+
+#correo_sesion, #contrasena_sesion{
+	width: 290px;
+	height:30px;
+	border: 1px solid #c3c2c2;
+}
+
+#boton_sesion{
+	display: block;
+	margin:10px auto;
+	
+}
+
+input:focus, textarea:focus{
+	border: 1px solid #3293D6 !important;
+	-moz-box-shadow: 0 0 5px #a9d3ff;
+	-webkit-box-shadow: 0 0 5px #a9d3ff;
+	box-shadow: 0 0 5px #a9d3ff;
+	
+}
+
+

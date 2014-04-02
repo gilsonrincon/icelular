@@ -23,9 +23,9 @@
 						</th>
 						<th @if($order_field=="title")class="ordering @if($order_dir=='asc') asc @else desc @endif"@endif>
 							@if($order_dir=='asc')
-								{{ link_to('admin/cms?page='.$page.'&order_field=title&order_dir=desc',"TÍTULO") }}
+								{{ link_to('admin/cms?page='.$page.'&order_field=title&order_dir=desc',"TÍTULO ▼") }}
 							@else
-								{{ link_to('admin/cms?page='.$page.'&order_field=title&order_dir=asc',"TÍTULO") }}
+								{{ link_to('admin/cms?page='.$page.'&order_field=title&order_dir=asc',"TÍTULO ▲") }}
 							@endif
 						</th>
 						<th>DESCRIPCIÓN</th>

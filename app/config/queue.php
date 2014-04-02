@@ -56,5 +56,11 @@ return array(
 		),
 
 	),
-
+	
+	/**
+	 * Nueva configuración para la versión 4.1
+	 */
+	'failed' => array(
+    'database' => 'mysql', 'table' => 'failed_jobs',
+	),
 );

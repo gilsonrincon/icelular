@@ -3,8 +3,8 @@
 use Closure;
 use Doctrine\DBAL\Driver\PDOSqlsrv\Driver as DoctrineDriver;
 use Illuminate\Database\Query\Processors\SqlServerProcessor;
-use Illuminate\Database\Query\Grammars\MySqlGrammar as QueryGrammar;
-use Illuminate\Database\Schema\Grammars\MySqlGrammar as SchemaGrammar;
+use Illuminate\Database\Query\Grammars\SqlServerGrammar as QueryGrammar;
+use Illuminate\Database\Schema\Grammars\SqlServerGrammar as SchemaGrammar;
 
 class SqlServerConnection extends Connection {
 
@@ -13,6 +13,8 @@ class SqlServerConnection extends Connection {
 	 *
 	 * @param  Closure  $callback
 	 * @return mixed
+	 *
+	 * @throws \Exception
 	 */
 	public function transaction(Closure $callback)
 	{
@@ -69,7 +71,7 @@ class SqlServerConnection extends Connection {
 	/**
 	 * Get the default post processor instance.
 	 *
-	 * @return \Illuminate\Database\Query\Processors\SqlServerProcessor
+	 * @return \Illuminate\Database\Query\Processors\Processor
 	 */
 	protected function getDefaultPostProcessor()
 	{

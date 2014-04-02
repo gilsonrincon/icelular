@@ -48,7 +48,7 @@ class Request extends SymfonyRequest {
 	public function url()
 	{
 		return rtrim(preg_replace('/\?.*/', '', $this->getUri()), '/');
-	}	
+	}
 
 	/**
 	 * Get the full URL for the request.
@@ -117,13 +117,13 @@ class Request extends SymfonyRequest {
 				return true;
 			}
 		}
-		
+
 		return false;
 	}
 
 	/**
 	 * Determine if the request is the result of an AJAX call.
-	 * 
+	 *
 	 * @return bool
 	 */
 	public function ajax()
@@ -159,7 +159,7 @@ class Request extends SymfonyRequest {
 			return true;
 		}
 
-		if (is_bool($this->input($key)) or is_array($this->input($key)))
+		if (is_bool($this->input($key)) || is_array($this->input($key)))
 		{
 			return true;
 		}
@@ -174,7 +174,7 @@ class Request extends SymfonyRequest {
 	 */
 	public function all()
 	{
-		return $this->input() + $this->files->all();
+		return array_merge_recursive($this->input(), $this->files->all());
 	}
 
 	/**
@@ -234,6 +234,17 @@ class Request extends SymfonyRequest {
 	}
 
 	/**
+	 * Determine if a cookie is set on the request.
+	 *
+	 * @param  string  $key
+	 * @return bool
+	 */
+	public function hasCookie($key)
+	{
+		return ! is_null($this->cookie($key));
+	}
+
+	/**
 	 * Retrieve a cookie from the request.
 	 *
 	 * @param  string  $key
@@ -265,7 +276,9 @@ class Request extends SymfonyRequest {
 	 */
 	public function hasFile($key)
 	{
-		return $this->file($key) instanceof \SplFileInfo;
+		if (is_array($file = $this->file($key))) $file = head($file);
+
+		return $file instanceof \SplFileInfo;
 	}
 
 	/**
@@ -327,7 +340,7 @@ class Request extends SymfonyRequest {
 	public function flashOnly($keys)
 	{
 		$keys = is_array($keys) ? $keys : func_get_args();
-		
+
 		return $this->flash('only', $keys);
 	}
 
@@ -340,7 +353,7 @@ class Request extends SymfonyRequest {
 	public function flashExcept($keys)
 	{
 		$keys = is_array($keys) ? $keys : func_get_args();
-		
+
 		return $this->flash('except', $keys);
 	}
 
@@ -446,7 +459,7 @@ class Request extends SymfonyRequest {
 	{
 		$acceptable = $this->getAcceptableContentTypes();
 
-		return isset($acceptable[0]) and $acceptable[0] == 'application/json';
+		return isset($acceptable[0]) && $acceptable[0] == 'application/json';
 	}
 
 	/**
@@ -465,9 +478,29 @@ class Request extends SymfonyRequest {
 	}
 
 	/**
+	 * Create an Illuminate request from a Symfony instance.
+	 *
+	 * @param  \Symfony\Component\HttpFoundation\Request  $request
+	 * @return \Illuminate\Http\Request
+	 */
+	public static function createFromBase(SymfonyRequest $request)
+	{
+		if ($request instanceof static) return $request;
+
+		return with($self = new static)->duplicate(
+
+			$request->query->all(), $request->request->all(), $request->attributes->all(),
+
+			$request->cookies->all(), $request->files->all(), $request->server->all()
+		);
+	}
+
+	/**
 	 * Get the Illuminate session store implementation.
 	 *
 	 * @return \Illuminate\Session\Store
+	 *
+	 * @throws \RuntimeException
 	 */
 	public function getSessionStore()
 	{
