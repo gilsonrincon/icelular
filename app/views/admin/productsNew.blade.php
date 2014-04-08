@@ -104,18 +104,22 @@
 						{{Form::label("tagsList","Etiquetas que han sido usadas en el sitio:",array("class"=>"col-lg-12"))}}
 						<div class="col-lg-12">
 							<ul id="tagList" class="listSelect">
-								@foreach(Tag::all() as $tag)
+								@foreach(Tag::allUsed() as $tag)
 									<li>
-										<span>{{$tag['tag']}}</span>
+										<span class="tag btn btn-default btn-xs">{{$tag['tag']}}</span>
 									</li>
 								@endforeach
 							</ul>
 							<script type="text/javascript">
+								
 								$(document).ready(function(){
+									//añade una nueva etiqueta
 									$('#tagList span').click(function(e){
 										$('#tags').val($('#tags').val()+','+$(this).text());
 									});
-								})
+								});
+
+
 							</script>
 						</div>
 					</div>
@@ -272,6 +276,9 @@
 					<label class="col-lg-3" for="video">URL para compartir:</label>
 					<div class="col-lg-6">
 						<input type="text" name="video" id="video" value="{{$product['video']}}" class="form-control" />
+						<p class="help-block">
+							Copie la parte final de la dirección URL del video que desea utilizar; por ejmplo https://www.youtube.com/watch?v=<strong style="background-color:#60FA00; color:#000">ylP4DDwXZb8</strong>
+						</p>
 					</div>
 					<hr/>
 					<div style="text-align:center;">
@@ -285,29 +292,3 @@
 	{{Form::submit("Guardar",array("class"=>"btn btn-default btn-success"))}}
 	{{Form::close()}}
 @stop
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

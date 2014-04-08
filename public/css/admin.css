@@ -133,6 +133,10 @@
 
 /** fin Botones de opción para las secciones de administración **/
 	
+.listSelect{
+	list-style:none;
+}
+
 /**
  * 	Header
  */

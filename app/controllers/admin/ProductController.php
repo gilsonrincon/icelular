@@ -39,7 +39,7 @@ Class ProductController extends BaseController{
 		}
 		
 		if(Product::all()->count()>0){
-			//obtiene la lista de todas las categorías
+			//obtiene la lista de todos los productos
 			$products=Product::where('id','>','0')->orderBy($order_field,$order_dir)->paginate(Configuration::where('name','=','page_count')->first()->value);
 		}else{
 			$products=Product::all();
