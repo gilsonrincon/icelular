@@ -71,6 +71,9 @@
 									<li id="stores">
 										{{ link_to("admin/stores","Tiendas")}}
 									</li>
+									<li id="availableclicks">
+										{{ link_to('admin/availableclicks', 'Clics Disponibles')}}
+									</li>
 								</ul>
 							</li>
 							<li class="nav_header">

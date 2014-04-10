@@ -172,6 +172,10 @@ Route::group(array('before'=>"auth"), function(){
 	 * FIN GESTIÓN DE COMERCIOS / STORES
 	**************************************************/
 	
+	/*Gestion de clicks disponibles*/
+		Route::get('admin/availableclicks', 'Admin\AvailableClicks@index');
+		Route::get('admin/availableclicks/{id}/edit', 'Admin\AvailableClicks@edit');
+		Route::post('admin/availableclicks/update', 'Admin\AvailableClicks@update');
 	
 	/**************************************************
 	 * GESTIÓN CMS
