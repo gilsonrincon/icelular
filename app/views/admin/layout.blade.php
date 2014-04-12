@@ -74,6 +74,9 @@
 									<li id="availableclicks">
 										{{ link_to('admin/availableclicks', 'Clics Disponibles')}}
 									</li>
+									<li id="reportclicks">
+										{{ link_to('admin/reportclicks', 'Reportes de clics')}}
+									</li>
 								</ul>
 							</li>
 							<li class="nav_header">

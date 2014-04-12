@@ -173,9 +173,21 @@ Route::group(array('before'=>"auth"), function(){
 	**************************************************/
 	
 	/*Gestion de clicks disponibles*/
+		//Lista de clicks disponibles por tienda
 		Route::get('admin/availableclicks', 'Admin\AvailableClicks@index');
+		
+		//Formulario para editar los clicks disponibles
 		Route::get('admin/availableclicks/{id}/edit', 'Admin\AvailableClicks@edit');
+
+		//Envio del formulario para los clicks disponibles
 		Route::post('admin/availableclicks/update', 'Admin\AvailableClicks@update');
+
+	/*Reportes de clicks*/
+		//Lista de las tiendas
+		Route::get('admin/reportclicks', 'Admin\ReportClicks@index');
+
+		//Reporte de la tienda
+		Route::get('admin/reportclicks/{id}', 'Admin\ReportClicks@show');
 	
 	/**************************************************
 	 * GESTIÓN CMS
