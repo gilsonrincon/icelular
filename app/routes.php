@@ -188,6 +188,12 @@ Route::group(array('before'=>"auth"), function(){
 
 		//Reporte de la tienda
 		Route::get('admin/reportclicks/{id}', 'Admin\ReportClicks@show');
+
+	//Calificaciones
+		//Lista de ofertas, se una como index principal para entrar a ver las calificaciones
+		Route::get('admin/calificaciones', 'Admin\Reviews@index');
+		Route::get('admin/calificaciones/{id}', 'Admin\Reviews@index_offers');
+		Route::get('admin/calificaciones/{id}/reviews', 'Admin\Reviews@show');
 	
 	/**************************************************
 	 * GESTIÓN CMS

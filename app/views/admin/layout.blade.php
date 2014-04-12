@@ -77,6 +77,9 @@
 									<li id="reportclicks">
 										{{ link_to('admin/reportclicks', 'Reportes de clics')}}
 									</li>
+									<li id="reviews">
+										{{link_to('admin/calificaciones', 'Calificaciones de ofertas')}}
+									</li>
 								</ul>
 							</li>
 							<li class="nav_header">
