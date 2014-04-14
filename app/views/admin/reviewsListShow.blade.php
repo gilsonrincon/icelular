@@ -21,6 +21,7 @@
 					</th>
 					<th>Calificación</th>
 					<th>Comentario</th>
+					<th>Estado</th>
 					<th>Fecha</th>
 				</tr>
 			</thead>
@@ -30,6 +31,13 @@
 						<td>{{Form::checkbox($review->id, $review->id, false, array('class'=>'chkItem'))}}</td>
 						<td>{{link_to('admin/calificaciones/'.$review->id.'/edit',$review->vote)}}</td>
 						<td>{{link_to('admin/calificaciones/'.$review->id.'/edit',$review->comment)}}</td>
+						<td>
+							@if ($review->status == 0)
+								{{link_to('admin/calificaciones/'.$review->id.'/edit', 'Deshabilitado')}}
+							@else
+								{{link_to('admin/calificaciones/'.$review->id.'/edit', 'Habilitado')}}
+							@endif
+						</td>
 						<td>{{link_to('admin/calificaciones/'.$review->id.'/edit',$review->created_at)}}</td>
 					</tr>
 				@endforeach

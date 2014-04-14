@@ -82,7 +82,7 @@ class Reviews extends \BaseController {
 	//Editar el estado de un review
 	public function edit($id)
 	{
-		$review = Review::where('id', '=', $id)->get();
+		$review = Review::find($id);
 		$data['review'] = $review;
 
 		return View::make('admin.reviewEdit', $data);
@@ -94,7 +94,7 @@ class Reviews extends \BaseController {
 		$review = Review::find(Input::get('id'));
 		$review->status = Input::get('status');
 		$review->save();
-		Redirect::to('admin/calificaciones/'.$review->id);
+		return Redirect::to('admin/calificaciones/'.$review->product_id);
 	}
 
 	//Borrar comentarios seleccionados
