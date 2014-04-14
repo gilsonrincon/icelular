@@ -194,6 +194,9 @@ Route::group(array('before'=>"auth"), function(){
 		Route::get('admin/calificaciones', 'Admin\Reviews@index');
 		Route::get('admin/calificaciones/{id}', 'Admin\Reviews@index_offers');
 		Route::get('admin/calificaciones/{id}/reviews', 'Admin\Reviews@show');
+		Route::get('admin/calificaciones/{id}/edit', 'Admin\Reviews@edit');
+		Route::post('admin/calificaciones/update', 'Admin\Reviews@update');
+		Route::post('admin/calificaciones/delete', 'Admin\Reviews@destroy');
 	
 	/**************************************************
 	 * GESTIÓN CMS

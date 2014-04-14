@@ -2,15 +2,13 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class RenameColumnAndAlterToReviews extends Migration {
+class AlterToReviews extends Migration {
 
-	//Agregar una columna para el estado de la calificación y cambiar el nombre de la
-	//columna product_id a offer_id
+	//Agregar una columna para el estado de la calificación
 	public function up()
 	{
 		Schema::table('reviews', function($table){
 			$table->boolean('status')->nullable();
-			$table->renameColumn('product_id', 'offer_id');
 		});
 	}
 
@@ -18,7 +16,6 @@ class RenameColumnAndAlterToReviews extends Migration {
 	{
 		Schema::table('reviews', function($table){
 			$table->dropColumn('status');
-			$table->renameColumn('offer_id', 'product_id');
 		});
 	}
 

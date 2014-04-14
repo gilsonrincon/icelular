@@ -79,22 +79,36 @@ class Reviews extends \BaseController {
 		return View::make('admin.reviewsListShow', $data);
 	}
 
-	
+	//Editar el estado de un review
 	public function edit($id)
 	{
-		//
+		$review = Review::where('id', '=', $id)->get();
+		$data['review'] = $review;
+
+		return View::make('admin.reviewEdit', $data);
 	}
 
-
-	public function update($id)
+	//Actualizar el estado de un comentario
+	public function update()
 	{
-		//
+		$review = Review::find(Input::get('id'));
+		$review->status = Input::get('status');
+		$review->save();
+		Redirect::to('admin/calificaciones/'.$review->id);
 	}
 
-	
-	public function destroy($id)
+	//Borrar comentarios seleccionados
+	public function destroy()
 	{
-		//
+		$delete = Input::all();
+		array_shift($delete);
+
+		foreach ($delete as $d):
+			$review = Review::find($d);
+			$review->delete();
+		endforeach;
+
+		return Redirect::to('admin/calificaciones');
 	}
 
 }
