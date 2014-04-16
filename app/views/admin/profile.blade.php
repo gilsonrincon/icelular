@@ -443,6 +443,7 @@
 				</tr>
 			@endforeach
 		</table>
+		{{link_to('admin/profile/offer/create', 'Nueva Oferta', array('class'=>'btn btn-success'))}}
 	</div>
 </div>
 

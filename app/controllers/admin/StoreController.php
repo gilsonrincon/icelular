@@ -9,6 +9,7 @@ use Configuration;
 use Redirect;
 use Store;
 use Offer;
+use Product;
 use StoreAddress;
 
 Class StoreController extends BaseController{
@@ -263,7 +264,44 @@ Class StoreController extends BaseController{
 		$offer->save();
 		
 		return Redirect::back();
+	}
+
+	//Nueva oferta desde el perfil
+	public function createProfileOffer()
+	{
+		$products = Product::all();
+		$data['products'] = $products;
+
+		return View::make('admin.profileOffer', $data);
 	}	
+
+	//Guardar la nueva oferta desde el perfil
+	public function storeOfferProfile()
+	{
+		$offer = new Offer();
+	
+		$offer['title'] = Input::get('title');
+		$offer['description'] = Input::get('description');
+		$offer['price'] = Input::get('price');
+		$offer['store_id'] = 2;
+		$offer['product_id'] = Input::get('product');
+
+		if(Input::has('active')){
+			$offer['active']=true;
+		}else{
+			$offer['active']=false;
+		}
+		
+		$offer->save();
+		
+		return Redirect::to('admin/profile');
+	}
+
+	//borrar una oferta desde el perfil
+	public function storeProfileOffer()
+	{
+		return Redirect::to('admin/profile');
+	}
 }
 
 

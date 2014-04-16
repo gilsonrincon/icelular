@@ -28,6 +28,20 @@
 							<p class="help-block">Este título le permite usar su propio argumento de venta en el título de la publicación.</p>
 						</div>
 					</div>
+
+					<div class="control-group">
+						<label for="title" class="col-lg-3">Producto:</label>
+						<div class="col-lg-9">
+							<select name="product" id="" class="form-control">
+								@foreach ($products as $product)
+									<option value="{{$product->id}}">{{$product->name}}</option>
+								@endforeach
+							</select>
+							<p class="help-block">Este es el producto del cual se esta haciendo la oferta.</p>
+						</div>
+					</div>
+
+
 					
 					<div style="clear: both;"></div>
 					
@@ -37,24 +51,6 @@
 							<textarea name="description" class="form-control" required></textarea>
 							<p class="help-block">Puede informar sobre detalles de la oferta: descuentos, políticas de envío o algún tipo de incentivo que desee suministrar al 
 								comprador o visitante interesado.</p>
-						</div>
-					</div>
-					
-					<div style="clear: both;"></div>
-					
-					<div class="control-group">
-						<label for="store_id" class="col-lg-3">Tienda relacionada a la oferta:</label>
-						<div class="col-lg-9">
-							{{Form::select("store_id",$store_list, array("class"=>"form-control"))}}
-						</div>
-					</div>
-					
-					<div style="clear: both;"></div>
-					
-					<div class="control-group">
-						<label for="product_id" class="col-lg-3">Producto:</label>
-						<div class="col-lg-9">
-							{{Form::select("product_id",$product_list, array("class"=>"form-control"))}}
 						</div>
 					</div>
 					

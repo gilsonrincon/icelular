@@ -178,6 +178,12 @@ Route::group(array('before'=>"auth"), function(){
 	Route::get('admin/profile/offer/{id}/edit', 'Admin\StoreController@editOffer');
 	//Actualizar la oferta
 	Route::post('admin/profile/offer/update/{id}', 'Admin\StoreController@updateProfileOffer');
+	//Nueva Oferta desde el perfil
+	Route::get('admin/profile/offer/create', 'Admin\StoreController@createProfileOffer');
+	//Guardar la nueva oferta desde el perfil
+	Route::post('admin/profile/offer/store', 'Admin\StoreController@storeOfferProfile');
+	//Borrar la oferta
+	Route::post('admin/profile/offer/delete', 'Admin\StoreController@destroyProfileOffer');
 	
 	/*Gestion de clicks disponibles*/
 		//Lista de clicks disponibles por tienda
