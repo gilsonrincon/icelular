@@ -171,6 +171,13 @@ Route::group(array('before'=>"auth"), function(){
 	/**************************************************
 	 * FIN GESTIÓN DE COMERCIOS / STORES
 	**************************************************/
+
+	/*Zona de comercializadores, esto es para la edición de la tienda del usuario*/
+	Route::get('admin/profile', 'Admin\StoreController@showStore');
+	//Ofertas de la tienda
+	Route::get('admin/profile/offer/{id}/edit', 'Admin\StoreController@editOffer');
+	//Actualizar la oferta
+	Route::post('admin/profile/offer/update/{id}', 'Admin\StoreController@updateProfileOffer');
 	
 	/*Gestion de clicks disponibles*/
 		//Lista de clicks disponibles por tienda

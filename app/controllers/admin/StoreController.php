@@ -8,6 +8,7 @@ use Input;
 use Configuration;
 use Redirect;
 use Store;
+use Offer;
 use StoreAddress;
 
 Class StoreController extends BaseController{
@@ -221,6 +222,48 @@ Class StoreController extends BaseController{
 			return 'error';
 		}
 	}
+
+	/*Vista de la tienda individual*/
+	public function showStore()
+	{
+		$store=Store::find(2);
+		
+		$data['store']=$store;
+		$data['page_name']='profile';
+		
+		return View::make('admin.profile',$data);
+	}
+
+	//Editar una oferta
+	public function editOffer($id)
+	{
+		$offer = Offer::find($id);
+
+		$data['offer'] = $offer;
+		$data['page_name'] = 'profile';
+
+		return View::make('admin.profileOffer', $data);
+	}
+
+	//Actualizamos una oferta
+	public function updateProfileOffer($id)
+	{
+		$offer=Offer::find($id);
+	
+		$offer['title']=Input::get('title');
+		$offer['description']=Input::get('description');
+		$offer['price']=Input::get('price');
+		
+		if(Input::has('active')){
+			$offer['active']=true;
+		}else{
+			$offer['active']=false;
+		}
+		
+		$offer->save();
+		
+		return Redirect::back();
+	}	
 }
 
 
