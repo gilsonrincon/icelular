@@ -20,4 +20,10 @@ class Offer extends Eloquent{
 	{
 		return $this->belongsTo('Product', 'product_id');
 	}
+
+	//Relación con las calificaciones
+	public function reviews()
+	{
+		return $this->hasMany('Review', 'product_id');
+	}
 }

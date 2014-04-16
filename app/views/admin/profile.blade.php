@@ -23,6 +23,12 @@
 	<li>
 		<a href="#tab3" data-toggle="tab">Ofertas</a>
 	</li>
+	<li>
+		<a href="#tab4" data-toggle="tab">Clics</a>
+	</li>
+	<li>
+		<a href="#tab5" data-toggle="tab">Calificaciones</a>
+	</li>
 	@endif
 </ul>
 
@@ -424,7 +430,8 @@
 		@endif
 	</div>
 	<!-- Fin Direcciones / Puntos de venta -->
-
+	
+	<!--Muestra las ofertas o productos -->
 	<div id="tab3" class="tab-pane fade active in">
 		<table class="table">
 			<tr>
@@ -445,6 +452,48 @@
 		</table>
 		{{link_to('admin/profile/offer/create', 'Nueva Oferta', array('class'=>'btn btn-success'))}}
 	</div>
+	<!-- Muestra los clics -->
+	<div id="tab4" class="tab-pane fade active in">
+		<table class="table">
+			<tr>
+				<th>Oferta</th>
+				<th>Hora del clic</th>
+				<th>IP del clic</th>
+			</tr>
+			@foreach ($store->getOffers as $offer)
+				@foreach ($offer->clicks as $click)
+					<tr>
+						<td>{{$offer->title}}</td>
+						<td>{{$click->created_at}}</td>
+						<td>{{$click->ip}}</td>
+					</tr>
+				@endforeach
+			@endforeach
+		</table>
+	</div>
+	
+	<!-- Muestra los comentarios -->
+	<div id="tab5" class="tab-pane fade active in">
+		<table class="table">
+			<tr>
+				<th>Oferta</th>
+				<th>Comentario</th>
+				<th>Voto</th>
+				<th></th>
+			</tr>
+			@foreach ($store->getOffers as $offer)
+				@foreach ($offer->reviews as $review)
+					<tr>
+						<td>{{$offer->title}}</td>
+						<td>{{$review->comment}}</td>
+						<td>{{$review->vote}}</td>
+						<td>{{link_to('admin/report/'.$review->id, 'Reportar', array('class' => 'btn btn-warning'))}}</td>
+					</tr>
+				@endforeach
+			@endforeach
+		</table>
+	</div>
+
 </div>
 
 {{Form::close()}}
