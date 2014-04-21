@@ -7,6 +7,37 @@
 </script>
 
 @section("body")
+	<!--Banner principal -->
+	<section>
+		<div id="banner">
+			<div id="mainBanner" class="carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators">
+					<?php
+						$index = 0;
+					?>
+					@foreach ($mainBanners as $banner)
+						<li data-target="#mainBanner" data-slide-to="{{$index}}"></li>
+						<?php
+							$index = $index + 1;
+						?>
+					@endforeach
+					
+				</ol>
+				<div class="carousel-inner">
+				 	@foreach ($mainBanners as $banner)
+				 		<div class="item">
+					    	<img src="{{asset('img/b/'.$banner->image)}}" alt="Banner">
+					    </div>
+				 	@endforeach
+				</div>
+			</div>
+		</div>
+	</section>
+	<script>
+		$('#banner .item').first().addClass('active');
+		$('.carousel-indicators li').first().addClass('active');
+	</script>
+
 	<section class="col1">
 		@include("front.modules.categoryList")
 	</section>
@@ -29,4 +60,35 @@
 			<h2>No hay productos destacados.</h2>
 		@endif
 	</section>
+
+	<!-- Banner Secundario -->
+	<section>
+		<div id="secundaryBanner">
+			<div id="secBanner" class="carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators">
+					<?php
+						$index = 0;
+					?>
+					@foreach ($secBanners as $banner)
+						<li data-target="#secBanner" data-slide-to="{{$index}}"></li>
+						<?php
+							$index = $index + 1;
+						?>
+					@endforeach
+					
+				</ol>
+				<div class="carousel-inner">
+				 	@foreach ($secBanners as $banner)
+				 		<div class="item">
+					    	<img src="{{asset('img/b/'.$banner->image)}}" alt="Banner">
+					    </div>
+				 	@endforeach
+				</div>
+			</div>
+		</div>
+	</section>
+	<script>
+		$('#secBanner .item').first().addClass('active');
+		$('#secBanner .carousel-indicators li').first().addClass('active');
+	</script>
 @stop

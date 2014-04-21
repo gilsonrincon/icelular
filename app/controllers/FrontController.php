@@ -20,6 +20,12 @@ class FrontController extends BaseController {
 			}
 		}
 		
+		//Lista de banners principales
+		$data['mainBanners'] = Banner::where('hook_id', '=', 1)->get();
+
+		//Lista de banners secundarios
+		$data['secBanners'] = Banner::where('hook_id', '=', 2)->get();
+
 		//pasamos los datos a la plantilla
 		$data['featuredOffers']=$featuredOffers;		
 		
