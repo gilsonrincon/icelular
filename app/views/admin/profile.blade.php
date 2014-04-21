@@ -487,7 +487,14 @@
 						<td>{{$offer->title}}</td>
 						<td>{{$review->comment}}</td>
 						<td>{{$review->vote}}</td>
-						<td>{{link_to('admin/report/'.$review->id, 'Reportar', array('class' => 'btn btn-warning'))}}</td>
+						<td>
+						@if ($review->complaint)
+							{{$review->complaint->status}}
+						@else
+							{{link_to('admin/report/'.$review->id, 'Reportar', array('class' => 'btn btn-warning'))}}
+						@endif
+						
+						</td>
 					</tr>
 				@endforeach
 			@endforeach

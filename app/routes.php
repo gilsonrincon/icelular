@@ -184,6 +184,9 @@ Route::group(array('before'=>"auth"), function(){
 	Route::post('admin/profile/offer/store', 'Admin\StoreController@storeOfferProfile');
 	//Borrar la oferta
 	Route::post('admin/profile/offer/delete', 'Admin\StoreController@destroyProfileOffer');
+	//Reportar una calificación
+	Route::get('admin/report/{id}', 'Admin\ComplaintController@create');
+	Route::post('admin/report', 'Admin\ComplaintController@store');
 	
 	/*Gestion de clicks disponibles*/
 		//Lista de clicks disponibles por tienda
@@ -210,6 +213,10 @@ Route::group(array('before'=>"auth"), function(){
 		Route::get('admin/calificaciones/{id}/edit', 'Admin\Reviews@edit');
 		Route::post('admin/calificaciones/update', 'Admin\Reviews@update');
 		Route::post('admin/calificaciones/delete', 'Admin\Reviews@destroy');
+
+	//Reportes
+		//Lista de reportes o quejas
+		Route::get('admin/quejas', 'Admin\ComplaintController@index');
 	
 	/**************************************************
 	 * GESTIÓN CMS

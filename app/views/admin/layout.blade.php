@@ -80,6 +80,9 @@
 									<li id="reviews">
 										{{link_to('admin/calificaciones', 'Calificaciones de ofertas')}}
 									</li>
+									<li id="complaints">
+										{{link_to('admin/quejas', 'Quejas de calificaciones')}}
+									</li>
 								</ul>
 							</li>
 							<li class="nav_header">

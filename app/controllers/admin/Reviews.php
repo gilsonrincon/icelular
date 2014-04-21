@@ -56,7 +56,6 @@ class Reviews extends \BaseController {
 
 		return View::make('admin.reviewsOffersList', $data);
 	}
-
 	
 	public function create()
 	{
