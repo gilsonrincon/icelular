@@ -41,6 +41,7 @@ class ComplaintController extends \BaseController {
 		$data['order_field']=$order_field;
 		$data['order_dir']=$order_dir;
 		$data['page']=$page;
+		$data['page_name']='complaints';
 
 		$data['complaints'] = $complaints;
 
@@ -82,16 +83,34 @@ class ComplaintController extends \BaseController {
 		//
 	}
 
-	
+	//Editar la queja o mejor el estado
 	public function edit($id)
 	{
-		//
+		$data['complaint'] = Complaint::find($id);
+		return View::make('admin.complaintEdit', $data);
 	}
 
-	
-	public function update($id)
+	//Se actualiza la queja, en este caso dependiendo de la seleccion es posible que se borre 
+	//el review o simplemente se borre.
+	public function update()
 	{
-		//
+		$complaint = Complaint::find(Input::get('id'));
+		$complaint->status = Input::get('status');
+		$complaint->save();
+
+		if(Input::get('status') == 'Aprobado y Borrado'):
+			$id = $complaint->review_id;
+			$review = Review::find($id);
+			$review->delete();
+			$complaint->delete();
+		elseif(Input::get('status') == 'Reclamo Aprobado'): 
+			$id = $complaint->review_id;
+			$review = Review::find($id);
+			$review->status = 0;
+			$review->save();
+		endif;
+
+		return Redirect::to('admin/quejas');
 	}
 
 	

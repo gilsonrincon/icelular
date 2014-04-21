@@ -217,6 +217,8 @@ Route::group(array('before'=>"auth"), function(){
 	//Reportes
 		//Lista de reportes o quejas
 		Route::get('admin/quejas', 'Admin\ComplaintController@index');
+		Route::get('admin/quejas/{id}', 'Admin\ComplaintController@edit');
+		Route::post('admin/quejas', 'Admin\ComplaintController@update');
 	
 	/**************************************************
 	 * GESTIÓN CMS
