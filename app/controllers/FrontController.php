@@ -46,11 +46,36 @@ class FrontController extends BaseController {
 		$data['product'] = Product::find($id);
 
 		if(is_null($data['product'])):
-			App::abort(404, 'El propietario no existe.');
+			App::abort(404, 'El producto no existe.');
 		endif;
 		$data['order'] = Input::get('order', 'desc');
 		$data['offers'] = Offer::where('product_id', '=', $id)->orderBy('price', Input::get('order', 'desc'))->get();
 		
 		return View::make('front.product', $data);
+	}
+
+	//Muestra una oferta
+	public function offerView($id)
+	{
+		//Recuperamos la oferta, si no existe error 404
+		$data['offer'] = Offer::find($id);
+		if(is_null($data['offer'])):
+			App::abort(404, 'La oferta ya no existe.');
+		endif;
+
+		$data['product'] = Product::find($data['offer']->product_id);
+
+		return View::make('front.offer', $data);
+	}
+
+	//Ver perfil de una tienda
+	public function storeView($id, $url)
+	{
+		$data['store'] = Store::find($id);
+		if(is_null($data['store'])):
+			App::abort(404, 'La tienda no existe.');
+		endif;
+
+		return View::make('front.store', $data);
 	}
 }

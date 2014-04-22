@@ -56,27 +56,11 @@
 			</div>
 		@endif
 	</div>
-		<!--ofertas-->
-		<h2>Ofertas</h2>
-		@if ($order == "desc")
-			{{link_to('producto/'.$product->id.'-'.$product->url.'.html?order=asc', 'De menor a mayor precio')}}
-		@else
-			{{link_to('producto/'.$product->id.'-'.$product->url.'.html?order=desc', 'De mayor a menor precio')}}
-		@endif
-		<ol>
-			@foreach ($offers as $offer)
-				<li>
-					<b>{{$offer->title}}:</b> <span class="price">{{$offer->price}}</span><br>
-					<b>Descripción:</b><br> <p class="description">{{$offer->description}}</p><br>
-					<b>Tienda:</b> {{link_to('tienda/'.$offer->store->id.'-'.$offer->store->url_seo.'.html', $offer->store->name)}}<br>
-					<b>Logo:</b><br>
-					<a href="/tienda/{{$offer->store->id}}-{{$offer->store->url_seo}}.html"><img src="{{asset('img/t/'.$offer->store->logo)}}"></a>
-					<br>
-					<a target="_blank" href="{{$offer->store->url}}">Visitar sitio web</a> |
-					<a target="_blank" href="{{$offer->url}}">Visitar tienda online</a>
-				</li>
-			@endforeach
-		</ol>
+		<!--Información de la oferta-->
+		<h2>{{$offer->title}}</h2>
+		<b>Tienda:</b> {{$offer->store->name}}<br>
+
+		<p>{{$offer->description}}</p>
 
 
 @stop

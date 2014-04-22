@@ -13,6 +13,12 @@ Route::get('/','FrontController@index');
 	
 	//Ver ofertas para un producto dado
 	Route::get('producto/{id}-{url}.html','FrontController@productView');
+
+	//Ver un perfil
+	Route::get('tienda/{id}-{url}.html', 'FrontController@storeView');
+
+	//Ver una oferta
+	Route::get('oferta/{id}', 'FrontController@offerView');
 	
 	
 /*********************************************
