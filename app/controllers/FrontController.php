@@ -43,6 +43,14 @@ class FrontController extends BaseController {
 	 * Muestra la lista de ofertas para un producto dado
 	**/
 	public function productView($id, $url){
-		return 'ok';
+		$data['product'] = Product::find($id);
+
+		if(is_null($data['product'])):
+			App::abort(404, 'El propietario no existe.');
+		endif;
+		$data['order'] = Input::get('order', 'desc');
+		$data['offers'] = Offer::where('product_id', '=', $id)->orderBy('price', Input::get('order', 'desc'))->get();
+		
+		return View::make('front.product', $data);
 	}
 }

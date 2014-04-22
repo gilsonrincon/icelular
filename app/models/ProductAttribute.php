@@ -22,5 +22,11 @@ class ProductAttribute extends Eloquent{
 		}
 		return $val;
 	}
+
+	//Relación con los atributos
+	public function attribute()
+	{
+		return $this->belongsTo('Attribute', 'attribute_id');
+	}
 	
 }

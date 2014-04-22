@@ -21,4 +21,28 @@ class Product extends Eloquent{
 	public function getOffers(){
 		return $this->hasMany('Offer','product_id');
 	}
+
+	//Relación con los atributos
+	public function attributes()
+	{
+		return $this->hasMany('ProductAttribute', 'product_id');
+	}
+
+	//Relacion con la categoria
+	public function categories()
+	{
+		return $this->hasMany('ProductCategory', 'product_id');
+	}
+
+	//Relación con las imagenes
+	public function images()
+	{
+		return $this->hasMany('ProductImage', 'product_id');
+	}
+
+	//Relacion con las ofertas
+	public function offers()
+	{
+		return $this->hasMany('Offer', 'product_id');
+	}
 }
