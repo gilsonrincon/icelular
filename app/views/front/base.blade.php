@@ -30,7 +30,14 @@
 		<header>
 			<section class="container">
 				<h1>¡BIENVENIDO A ICELULAR.COM!</h1>
+				<div class="col-xs-6">
+					{{Form::open(array('url'=>'buscar', 'method'=>'GET'))}}
+					{{Form::text('find', '', array('placeholder' => '¿Que esta buscando?', 'class' => 'form-control'))}}
+					{{Form::submit('Buscar', array('class' => 'btn btn-default'))}}
+					{{Form::close()}}
+				</div>
 			</section>
+			
 		</header>
 		<section id="contenedor" class="container">
 			@yield("body")

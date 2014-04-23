@@ -78,4 +78,19 @@ class FrontController extends BaseController {
 
 		return View::make('front.store', $data);
 	}
+
+	//Buscar
+	public function find()
+	{
+		//asignamos el valor de busqueda
+		$find = Input::get('find', '');
+
+		//Buscamos si hay algo en find, sino redireccionamos hacia atras
+		if($find != ''):
+			$data['result'] = DB::select("SELECT * FROM db_icelular.products WHERE description LIKE '%".$find."%' OR name LIKE '%".$find."%' OR short_description LIKE '%".$find."%'");
+			return View::make('front.find', $data);
+		else:
+			return Redirect::back();
+		endif;
+	}
 }

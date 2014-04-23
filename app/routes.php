@@ -19,6 +19,9 @@ Route::get('/','FrontController@index');
 
 	//Ver una oferta
 	Route::get('oferta/{id}', 'FrontController@offerView');
+
+	//Buscar
+	Route::get('buscar', 'FrontController@find');
 	
 	
 /*********************************************
