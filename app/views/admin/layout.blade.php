@@ -102,6 +102,9 @@
 									<li id="cms">
 										{{ link_to("admin/cms","Contenido del sitio (CMS)")}}
 									</li>
+									<li id="countries">
+										{{ link_to("admin/countries","Paises")}}
+									</li>
 								</ul>
 							</li>
 						</ul>

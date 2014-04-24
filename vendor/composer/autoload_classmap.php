@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddClicsColumnStores' => $baseDir . '/app/database/migrations/2013_11_06_110040_add_clics_column_stores.php',
+    'AddStateToOffers' => $baseDir . '/app/database/migrations/2014_04_24_041929_AddStateToOffers.php',
     'AddUrlColumnCategoriesProductsStores' => $baseDir . '/app/database/migrations/2013_11_06_160552_add_url_column_categories_products_stores.php',
     'Admin\\AttributeController' => $baseDir . '/app/controllers/admin/AttributeController.php',
     'Admin\\AvailableClicks' => $baseDir . '/app/controllers/admin/AvailableClicks.php',
@@ -14,6 +15,7 @@ return array(
     'Admin\\CategoriesController' => $baseDir . '/app/controllers/admin/CategoriesController.php',
     'Admin\\CmsController' => $baseDir . '/app/controllers/admin/CmsController.php',
     'Admin\\ComplaintController' => $baseDir . '/app/controllers/admin/ComplaintController.php',
+    'Admin\\CountriesController' => $baseDir . '/app/controllers/admin/CountriesController.php',
     'Admin\\OfferController' => $baseDir . '/app/controllers/admin/OfferController.php',
     'Admin\\ProductController' => $baseDir . '/app/controllers/admin/ProductController.php',
     'Admin\\ReportClicks' => $baseDir . '/app/controllers/admin/ReportClicks.php',
@@ -55,6 +57,7 @@ return array(
     'Cms' => $baseDir . '/app/models/Cms.php',
     'Complaint' => $baseDir . '/app/models/Complaint.php',
     'Configuration' => $baseDir . '/app/models/Configuration.php',
+    'CountriesTableSeeder' => $baseDir . '/app/database/seeds/CountriesTableSeeder.php',
     'Country' => $baseDir . '/app/models/Country.php',
     'CreateAttributesGroupsTable' => $baseDir . '/app/database/migrations/2013_10_04_143316_create_attributes_groups_table.php',
     'CreateAttributesTable' => $baseDir . '/app/database/migrations/2013_10_04_143150_create_attributes_table.php',
@@ -67,7 +70,6 @@ return array(
     'CreateCmsTable' => $baseDir . '/app/database/migrations/2013_11_06_155728_create_cms_table.php',
     'CreateComplaints' => $baseDir . '/app/database/migrations/2014_04_16_203920_CreateComplaints.php',
     'CreateConfigurationsTable' => $baseDir . '/app/database/migrations/2013_10_16_084631_create_configurations_table.php',
-    'CreateCountries' => $baseDir . '/app/database/migrations/2014_04_23_212545_CreateCountries.php',
     'CreateCountriesTable' => $baseDir . '/app/database/migrations/2013_11_01_140033_create_countries_table.php',
     'CreateOfferHistsTable' => $baseDir . '/app/database/migrations/2013_11_21_174734_create_offer_hists_table.php',
     'CreateOffersClicksTable' => $baseDir . '/app/database/migrations/2013_11_06_113156_create_offers_clicks_table.php',

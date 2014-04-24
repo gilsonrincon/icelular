@@ -57,6 +57,41 @@
 							{{Form::select("product_id",$product_list, array("class"=>"form-control"))}}
 						</div>
 					</div>
+
+					<div style="clear: both;"></div>
+
+					<div class="control-group">
+						<label for="country_id" class="col-lg-3">Pais:</label>
+						<div class="col-lg-9">
+							<select id="country_id" name="country_id">
+								@foreach ($countries as $country)
+									<option value="{{$country->id}}">
+										{{$country->country}}
+									</option>
+								@endforeach
+							</select>
+						</div>
+					</div>
+
+					<div style="clear: both;"></div>
+
+					<div class="control-group">
+						<label for="state_id" class="col-lg-3">Estado:</label>
+						<div class="col-lg-9">
+							<select id="state_id" name="state_id" style="width: 240px">
+								
+							</select>
+						</div>
+					</div>
+
+					<script>
+						$(document).on('ready', function(){
+							$('#country_id').change(function(event) {
+								alert("hola")
+								
+							});
+						})
+					</script>
 					
 					<div style="clear: both;"></div>
 					

@@ -9,6 +9,7 @@ Use DB;
 Use Configuration;
 Use Store;
 Use Product;
+Use Country;
 Use Offer;
 Use OfferClick;
 Use OfferHit;
@@ -55,6 +56,7 @@ class OfferController extends \BaseController {
 		$data['product_list']=$product_list;
 		$data['pdocuts']=Product::all();
 		$data['stores']=Store::all();
+		$data['countries'] = Country::all();
 		$data['page_name']='offers';
 		
 		return View::make('admin.offersNew',$data);

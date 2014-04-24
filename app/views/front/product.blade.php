@@ -73,7 +73,8 @@
 					<a href="/tienda/{{$offer->store->id}}-{{$offer->store->url_seo}}.html"><img src="{{asset('img/t/'.$offer->store->logo)}}"></a>
 					<br>
 					<a target="_blank" href="{{$offer->store->url}}">Visitar sitio web</a> |
-					<a target="_blank" href="{{$offer->url}}">Visitar tienda online</a>
+					<a target="_blank" href="{{$offer->url}}">Visitar tienda online</a> | 
+					{{link_to('oferta/'.$offer->id, 'Ver Calificaciones | Calificar')}}
 				</li>
 			@endforeach
 		</ol>

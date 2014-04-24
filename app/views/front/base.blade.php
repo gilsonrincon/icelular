@@ -22,6 +22,7 @@
 		
 		<!-- add JS files -->
 		{{ HTML::script("js/jquery-1.10.2.min.js") }}
+		{{ HTML::script("js/validations.js") }}
 		{{ HTML::script("bootstrap/js/bootstrap.min.js") }}
 
 	</head>

@@ -1,66 +1,42 @@
 @extends ('front.base')
 
 @section ('body')
-	<ul class="nav nav-tabs">
-		<li class="active"><a href="#general" data-toggle="tab">general</a></li>
-		<li><a href="#caracteristicas" data-toggle="tab">caracteristicas</a></li>
-		@if ($product->video != "")
-		  	<li><a href="#video" data-toggle="tab">video</a></li>
-		@endif
-	</ul>
-
-	<!-- Tab panes -->
-	<div class="tab-content">
-		<div class="tab-pane active" id="general">
-	  		<h1>{{$product->name}}</h1>
-
-	  		<div id="productImage" class="carousel slide" data-ride="carousel">
-				<ol class="carousel-indicators">
-					<?php
-						$index = 0;
-					?>
-					@foreach ($product->images as $image)
-						<li data-target="#productImage" data-slide-to="{{$index}}"></li>
-						<?php
-							$index = $index + 1;
-						?>
-					@endforeach
-					
-				</ol>
-				<div class="carousel-inner">
-				 	@foreach ($product->images as $image)
-				 		<div class="item">
-					    	<img src="{{asset('img/p/'.$image->image)}}" alt="Banner">
-					    </div>
-				 	@endforeach
-				</div>
-			</div>
-			<script>
-				$('#productImage .item').first().addClass('active');
-				$('.carousel-indicators li').first().addClass('active');
-			</script>
-
-			<p>{{$product->description}}</p>
-		</div>
-		<div class="tab-pane" id="caracteristicas">
-			@foreach ($product->attributes as $attribute)
-				<div>
-					<b>{{$attribute->attribute->attribute}}:</b>
-					{{$attribute->value}}
-				</div>
-			@endforeach
-		</div>
-		@if ($product->video != "")
-			<div class="tab-pane" id="video">
-				<iframe width="420" height="315" src="//youtube.com/embed/{{$product->video}}" frameborder="0" allowfullscreen=""></iframe>
-			</div>
-		@endif
-	</div>
 		<!--Información de la oferta-->
 		<h2>{{$offer->title}}</h2>
 		<b>Tienda:</b> {{$offer->store->name}}<br>
 
 		<p>{{$offer->description}}</p>
+		
+		<ul>
+			@foreach ($offer->reviews as $review)
+				<li>
+					<b>{{$review->vote}}</b><br>
+					<p>{{$review->comment}}</p>
+				</li>
+			@endforeach
+		</ul>
 
+		{{Form::open(array('url' => 'oferta', 'id'=>'review'))}}
+			{{Form::hidden('offer', $offer->id)}}
+			<div class="form-group">
+			    <label for="exampleInputEmail1">Voto</label>
+			    <select name="vote" id="vote" class="form-control numeric">
+			    	<option value="no-calificado">Seleccionar</option>
+			    	<option value="1">1</option>
+			    	<option value="2">2</option>
+			    	<option value="3">3</option>
+			    	<option value="4">4</option>
+			    	<option value="5">5</option>
+			    </select>
+			</div>
+			<div class="form-group">
+			    {{Form::textarea('comment', '', array('class' => 'form-control require', 'placeholder' => 'Por favor dinos la razon de tu voto'))}}
+			</div>
+			{{Form::submit('Enviar', array('class' => 'btn btn-primary btn-submit', 'data-form' => 'review'))}}
+		{{Form::close()}}
+
+		<div class="validation" style="padding-top:20px; padding-bottom:20px; height:40px">
+			<p></p>
+		</div>
 
 @stop

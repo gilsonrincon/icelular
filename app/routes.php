@@ -20,6 +20,9 @@ Route::get('/','FrontController@index');
 	//Ver una oferta
 	Route::get('oferta/{id}', 'FrontController@offerView');
 
+	//Guardar la calificación
+	Route::post('oferta', 'FrontController@reviewSave');
+
 	//Buscar
 	Route::get('buscar', 'FrontController@find');
 	
@@ -27,7 +30,9 @@ Route::get('/','FrontController@index');
 /*********************************************
  * FIN LO REFERENTE AL FRONTEND
 *********************************************/
-
+	
+	//Recuperar la lista de estados de un pais
+	Route::post('estados', 'Admin\CountriesController@states');
 
 /*************************************
  * Inicio de sesión

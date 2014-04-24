@@ -54,7 +54,7 @@ class FrontController extends BaseController {
 		return View::make('front.product', $data);
 	}
 
-	//Muestra una oferta
+	//Muestra las calificaciones de una oferta
 	public function offerView($id)
 	{
 		//Recuperamos la oferta, si no existe error 404
@@ -63,9 +63,20 @@ class FrontController extends BaseController {
 			App::abort(404, 'La oferta ya no existe.');
 		endif;
 
-		$data['product'] = Product::find($data['offer']->product_id);
-
 		return View::make('front.offer', $data);
+	}
+
+	//Guardar la calificacion
+	public function reviewSave()
+	{
+		$review = new Review();
+		$review->product_id = Input::get('offer');
+		$review->vote = Input::get('vote');
+		$review->comment = Input::get('comment');
+		$review->status = 1;
+		$review->save();
+
+		return Redirect::to('oferta/'.Input::get('offer'));
 	}
 
 	//Ver perfil de una tienda
