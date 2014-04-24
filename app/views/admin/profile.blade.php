@@ -146,6 +146,14 @@
 				<input class="form-control" type="url" id="youtube" name="youtube" placeholder="http://youtube.com/sutienda" value="@if(isset($store)){{$store['youtube']}}@endif" />
 			</div>
 		</div>
+
+		<div class="form-group">
+			<label class="col-lg-3" for="map">Mapa:</label>
+			<div class="col-lg-6">
+				<textarea name="map" id="map" cols="65" rows="7">@if(isset($store)){{$store['map']}}@endif</textarea>
+			</div>
+		</div>
+
 		{{Form::submit("Guardar",array("class"=>"btn btn-default btn-success"))}}
 	</div>
 	<!-- fin datos generales del producto -->

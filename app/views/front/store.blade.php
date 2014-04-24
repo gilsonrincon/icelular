@@ -1,9 +1,16 @@
 @extends ('front.base')
 
 @section ('body')
-	<div id="store">
+	<div id="store" class="col-md-12">
 		<h2>{{$store->name}}</h2>
-		<b>Logo:</b><img src="{{asset('img/t/'.$store->logo)}}"><br>
+		<div class="col-md-6">
+			<b>Logo:</b><br>
+			<img src="{{asset('img/t/'.$store->logo)}}"><br>
+		</div>
+		<div class="col-md-6">
+			<b>Mapa:</b><br>
+			{{$store->map}}<br>
+		</div>
 		{{link_to($store->url, 'Sitio web', array('target' => '_blank'))}}<br>
 		{{link_to($store->fan_page, 'Fan Page', array('target' => '_blank'))}}<br>
 		{{link_to($store->twitter, 'Twitter', array('target' => '_blank'))}}<br>

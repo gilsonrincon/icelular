@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddClicsColumnStores' => $baseDir . '/app/database/migrations/2013_11_06_110040_add_clics_column_stores.php',
+    'AddMapToStores' => $baseDir . '/app/database/migrations/2014_04_24_210834_AddMapToStores.php',
     'AddStateToOffers' => $baseDir . '/app/database/migrations/2014_04_24_041929_AddStateToOffers.php',
     'AddUrlColumnCategoriesProductsStores' => $baseDir . '/app/database/migrations/2013_11_06_160552_add_url_column_categories_products_stores.php',
     'Admin\\AttributeController' => $baseDir . '/app/controllers/admin/AttributeController.php',
@@ -66,7 +67,6 @@ return array(
     'CreateBannerHooksTable' => $baseDir . '/app/database/migrations/2013_11_22_005035_create_banner_hooks_table.php',
     'CreateBannersTable' => $baseDir . '/app/database/migrations/2013_11_22_004637_create_banners_table.php',
     'CreateCategoriesTable' => $baseDir . '/app/database/migrations/2013_10_04_144019_create_categories_table.php',
-    'CreateCities' => $baseDir . '/app/database/migrations/2014_04_23_212640_CreateCities.php',
     'CreateCmsTable' => $baseDir . '/app/database/migrations/2013_11_06_155728_create_cms_table.php',
     'CreateComplaints' => $baseDir . '/app/database/migrations/2014_04_16_203920_CreateComplaints.php',
     'CreateConfigurationsTable' => $baseDir . '/app/database/migrations/2013_10_16_084631_create_configurations_table.php',

@@ -85,7 +85,8 @@ Class StoreController extends BaseController{
 		$store['twitter']=Input::get('twitter');
 		$store['google_plus']=Input::get('google_plus');
 		$store['youtube']=Input::get('youtube');
-		
+		$store['map'] = Input::get('map');
+
 		$store->save();
 		
 		return Redirect::to('admin/stores/'.$store['id'].'/edit');
@@ -134,10 +135,10 @@ Class StoreController extends BaseController{
 		$store['twitter']=Input::get('twitter');
 		$store['google_plus']=Input::get('google_plus');
 		$store['youtube']=Input::get('youtube');
-		
+		$store['map'] = Input::get('map');
 		$store->save();
 		
-		return Redirect::to('admin/stores');
+		return Redirect::back(); //Redirect::to('admin/stores');
 	}
 	
 	/** Eliminar una tienda **/
