@@ -44,6 +44,22 @@ Route::get('/','FrontController@index');
  * TODAS LAS RUTAS DE LA ADMINISTRACIÓN ESTÁN AGRUPADAS Y DEPENDEN DEL FILTRO DE LA AUTENTICACIÓN
 *****************************************************************************************************/ 
 Route::group(array('before'=>"auth"), function(){
+	//Gestion de paises
+
+	//Lista de paises
+	Route::get('admin/countries', 'Admin\CountriesController@index');
+
+	//Lista de ciudades de un pais
+	Route::get('admin/countries/{id}/show', 'Admin\CountriesController@show');
+
+	//Nueva ciudad
+	Route::get('admin/countries/{id}/createstate', 'Admin\CountriesController@create');
+
+	//Guardar la nueva ciudad
+	Route::post('admin/countries', 'Admin\CountriesController@store');
+
+	//Borrar una ciudad
+	Route::post('admin/countries/deletestate', 'Admin\CountriesController@destroy');
 
 	/**
 	 * Dash Board para administración del sitio
