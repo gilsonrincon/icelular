@@ -68,13 +68,12 @@ class CountriesController extends \BaseController {
 	//Recuperamos los estados de un pais, esto se usa para agregarlos a una lista
 	public function states()
 	{
-		$states = State::where('country_id', '=', Input::get('country'))->get();
-
+		$states = State::where('country_id', '=', Input::get('country'))->orderBy('state', 'asc')->get();
 		$html = "";
 		foreach ($states as $state):
 				$html .= "<option value='".$state->id."'>".$state->state."</option>";
 		endforeach;
-
+		
 		echo $html;
 	}
 

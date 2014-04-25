@@ -13,6 +13,7 @@ Use Country;
 Use Offer;
 Use OfferClick;
 Use OfferHit;
+Use State;
 
 class OfferController extends \BaseController {
 
@@ -85,6 +86,7 @@ class OfferController extends \BaseController {
 			$data['pdocuts']=Product::all();
 			$data['stores']=Store::all();
 			$data['page_name']='offers';
+			$data['countries'] = Country::all();
 			
 			return View::make('admin.offersNew',$data);
 		}else{
@@ -95,6 +97,7 @@ class OfferController extends \BaseController {
 			$offer['store_id']=Input::get('store_id');
 			$offer['product_id']=Input::get('product_id');
 			$offer['price']=Input::get('price');
+			$offer['state_id'] = Input::get('state_id', 1);
 			
 			if(Input::has('active')){
 				$offer['active']=true;
@@ -114,10 +117,16 @@ class OfferController extends \BaseController {
 	**/
 	public function updateOffer($id){
 		$offer=Offer::find($id);
+
+		$data['states'] = null;
+		if($offer->state_id):
+			$data['states'] = State::where('country_id', '=', $offer->state->country_id)->orderBy('state', 'asc')->get();
+		endif;
 		
 		$data['offer']=$offer;
 		$data['page_name']='offers';
-		
+		$data['countries'] = Country::all();
+
 		return View::make('admin.offersNew',$data);
 	}
 	
@@ -130,6 +139,7 @@ class OfferController extends \BaseController {
 		$offer['title']=Input::get('title');
 		$offer['description']=Input::get('description');
 		$offer['price']=Input::get('price');
+		$offer['state_id'] = Input::get('state_id');
 		
 		if(Input::has('active')){
 			$offer['active']=true;

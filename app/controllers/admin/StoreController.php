@@ -11,6 +11,8 @@ use Store;
 use Offer;
 use Product;
 use StoreAddress;
+use Country;
+use State;
 
 Class StoreController extends BaseController{
 	
@@ -241,9 +243,15 @@ Class StoreController extends BaseController{
 	{
 		$offer = Offer::find($id);
 
+		$data['states'] = null;
+		if($offer->state_id):
+			$data['states'] = State::where('country_id', '=', $offer->state->country_id)->orderBy('state', 'asc')->get();
+		endif;
+
 		$data['offer'] = $offer;
 		$data['page_name'] = 'profile';
-
+		$data['countries'] = Country::all();
+		
 		return View::make('admin.profileOffer', $data);
 	}
 
@@ -255,7 +263,8 @@ Class StoreController extends BaseController{
 		$offer['title']=Input::get('title');
 		$offer['description']=Input::get('description');
 		$offer['price']=Input::get('price');
-		
+		$offer['state_id'] = Input::get('state_id');
+
 		if(Input::has('active')){
 			$offer['active']=true;
 		}else{
@@ -272,6 +281,7 @@ Class StoreController extends BaseController{
 	{
 		$products = Product::all();
 		$data['products'] = $products;
+		$data['countries'] = Country::all();
 
 		return View::make('admin.profileOffer', $data);
 	}	
@@ -286,6 +296,7 @@ Class StoreController extends BaseController{
 		$offer['price'] = Input::get('price');
 		$offer['store_id'] = 2;
 		$offer['product_id'] = Input::get('product');
+		$offer['state_id'] = Input::get('state_id');
 
 		if(Input::has('active')){
 			$offer['active']=true;

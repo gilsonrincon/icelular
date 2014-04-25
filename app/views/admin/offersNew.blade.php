@@ -85,11 +85,16 @@
 					</div>
 
 					<script>
+						//Petición via ajax para los estados
 						$(document).on('ready', function(){
-							$('#country_id').change(function(event) {
-								alert("hola")
-								
+							$("#country_id").change(function(event) {
+								$country_id = $("#country_id").val()
+								$.post('{{url("estados")}}', {country: $country_id}, function(data) {
+									$('#state_id').html(data)
+								});
 							});
+
+							$("#country_id").change()
 						})
 					</script>
 					
@@ -131,6 +136,61 @@
 							<p class="help-block">Este título le permite usar su propio argumento de venta en el título de la publicación.</p>
 						</div>
 					</div>
+
+					<div class="control-group">
+						<label for="country_id" class="col-lg-3">Pais:</label>
+						<div class="col-lg-9">
+							<select id="country_id" name="country_id">
+								@foreach ($countries as $country)
+									@if ($offer->state)
+										<option value="{{$country->id}}" 
+
+										@if ($offer->state->country_id == $country->id)
+											selected="selected"
+										@endif>
+
+											{{$country->country}}
+										</option>
+									@else
+										<option value="{{$country->id}}">
+											{{$country->country}}
+										</option>
+									@endif
+								@endforeach
+							</select>
+						</div>
+					</div>
+
+					<div style="clear: both;"></div>
+
+					<div class="control-group">
+						<label for="state_id" class="col-lg-3">Estado:</label>
+						<div class="col-lg-9">
+							<select id="state_id" name="state_id" style="width: 240px">
+								@if ($states)
+									@foreach ($states as $state)
+										<option value="{{$state->id}}" @if ($state->id == $offer->state_id)
+											selected="selected"
+										@endif>{{$state->state}}</option>
+									@endforeach
+								@endif
+							</select>
+						</div>
+					</div>
+
+					<script>
+						//Petición via ajax para los estados
+						$(document).on('ready', function(){
+							$("#country_id").change(function(event) {
+								$country_id = $("#country_id").val()
+								$.post('{{url("estados")}}', {country: $country_id}, function(data) {
+									$('#state_id').html(data)
+								});
+							});
+
+							//$("#country_id").change()
+						})
+					</script>
 					
 					<div style="clear: both;"></div>
 					

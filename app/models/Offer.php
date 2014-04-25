@@ -26,4 +26,10 @@ class Offer extends Eloquent{
 	{
 		return $this->hasMany('Review', 'product_id');
 	}
+
+	//Relacion con los estados
+	public function state()
+	{
+		return $this->belongsTo('State', 'state_id');
+	}
 }
