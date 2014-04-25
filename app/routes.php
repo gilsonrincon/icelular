@@ -25,7 +25,10 @@ Route::get('/','FrontController@index');
 
 	//Buscar
 	Route::get('buscar', 'FrontController@find');
-	
+
+	//Contacto
+	Route::get('contacto', 'FrontController@contact');
+	Route::post('contacto', 'FrontController@send');	
 	
 /*********************************************
  * FIN LO REFERENTE AL FRONTEND

@@ -104,4 +104,16 @@ class FrontController extends BaseController {
 			return Redirect::back();
 		endif;
 	}
+
+	//Formulario de contacto
+	public function contact()
+	{
+		return View::make('front.contact');
+	}
+
+	//Enviar formulario de contacto
+	public function send()
+	{
+
+	}
 }
