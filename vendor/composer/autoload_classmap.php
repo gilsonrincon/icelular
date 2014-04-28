@@ -10,6 +10,7 @@ return array(
     'AddMapToStores' => $baseDir . '/app/database/migrations/2014_04_24_210834_AddMapToStores.php',
     'AddStateToOffers' => $baseDir . '/app/database/migrations/2014_04_24_041929_AddStateToOffers.php',
     'AddUrlColumnCategoriesProductsStores' => $baseDir . '/app/database/migrations/2013_11_06_160552_add_url_column_categories_products_stores.php',
+    'AddUserIdToStores' => $baseDir . '/app/database/migrations/2014_04_28_165500_AddUserIdToStores.php',
     'Admin\\AttributeController' => $baseDir . '/app/controllers/admin/AttributeController.php',
     'Admin\\AvailableClicks' => $baseDir . '/app/controllers/admin/AvailableClicks.php',
     'Admin\\BannerController' => $baseDir . '/app/controllers/admin/BannerController.php',

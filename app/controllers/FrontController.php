@@ -48,8 +48,17 @@ class FrontController extends BaseController {
 		if(is_null($data['product'])):
 			App::abort(404, 'El producto no existe.');
 		endif;
+		$data['extraUrl'] = '';
+		if(Input::get('state_id')):
+			$data['offers'] = Offer::where('product_id', '=', $id)->where('state_id', '=', Input::get('state_id'))->orderBy('price', Input::get('order', 'desc'))->get();
+			$data['extraUrl'] = "&country_id=".Input::get('country_id').'&state_id='.Input::get('state_id');
+		else:
+			$data['offers'] = Offer::where('product_id', '=', $id)->orderBy('price', Input::get('order', 'desc'))->get();
+		endif;
+
+		$data['countries'] = Country::all();
 		$data['order'] = Input::get('order', 'desc');
-		$data['offers'] = Offer::where('product_id', '=', $id)->orderBy('price', Input::get('order', 'desc'))->get();
+		
 		
 		return View::make('front.product', $data);
 	}

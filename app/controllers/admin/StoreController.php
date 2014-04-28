@@ -13,6 +13,8 @@ use Product;
 use StoreAddress;
 use Country;
 use State;
+use User;
+use Session;
 
 Class StoreController extends BaseController{
 	
@@ -58,6 +60,7 @@ Class StoreController extends BaseController{
 	 */
 	public function newStore(){
 		$data['page_name']='stores';
+		$data['users'] = User::all();
 		
 		return View::make('admin.storesNew',$data);
 	}
@@ -72,6 +75,7 @@ Class StoreController extends BaseController{
 		$store['short_description']=Input::get('short_description');
 		$store['description']=Input::get('description');
 		$store['email']=Input::get('email');
+		$store['user_id'] = Input::get('user');
 		
 		if(Input::hasFile('logo') && Input::file('logo')!=NULL){
 			$logo=Input::file('logo');
@@ -230,8 +234,8 @@ Class StoreController extends BaseController{
 	/*Vista de la tienda individual*/
 	public function showStore()
 	{
-		$store=Store::find(2);
-		
+		$store=Store::find(Session::get('store'));
+
 		$data['store']=$store;
 		$data['page_name']='profile';
 		
@@ -294,7 +298,7 @@ Class StoreController extends BaseController{
 		$offer['title'] = Input::get('title');
 		$offer['description'] = Input::get('description');
 		$offer['price'] = Input::get('price');
-		$offer['store_id'] = 2;
+		$offer['store_id'] = Session::get('store');
 		$offer['product_id'] = Input::get('product');
 		$offer['state_id'] = Input::get('state_id');
 

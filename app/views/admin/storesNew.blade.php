@@ -43,6 +43,23 @@
 		</div>
 
 		<div class="form-group">
+			<label class="col-lg-3" for="user">Usuario:</label>
+			<div class="col-lg-6">
+				@if(isset($store))
+				@else
+					<select name="user" id="user" class="form-control">
+						@foreach ($users as $user)
+							<option value="{{$user->id}}">{{$user->email}}</option>
+						@endforeach
+					</select>
+				@endif
+				<p class="help-block">
+					Este campo se usa para seleccionar el usuario propietario de la tienda.
+				</p>
+			</div>
+		</div>
+
+		<div class="form-group">
 			<label class="col-lg-3" for="short_description">Descripción corta:</label>
 			<div class="col-lg-6">
 				@if(isset($store))

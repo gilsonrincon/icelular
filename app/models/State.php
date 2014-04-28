@@ -6,6 +6,6 @@ class State extends Eloquent{
 	
 	//Obteine el país de un determinado estado
 	public function country(){
-		return $this->hasOne('Country');
+		return $this->belongsTo('Country', 'state_id');
 	}
 }

@@ -56,17 +56,51 @@
 			</div>
 		@endif
 	</div>
+
+		<!--Filtro de lugares para las ofertas -->
+		{{Form::open(array('url'=>'producto/'.$product->id.'-'.$product->url.'.html', 'method'=>'get'))}}
+			<b>Buscar Ofertas en:</b>
+			<select id="country_id" name="country_id">
+				@foreach ($countries as $country)
+					<option value="{{$country->id}}">
+						{{$country->country}}
+					</option>
+				@endforeach
+			</select>
+			<select id="state_id" name="state_id" style="width: 240px">
+				
+			</select>
+	
+		{{Form::submit('Buscar')}}
+		{{Form::close()}}
+
+		<script>
+			//Petición via ajax para los estados
+			$(document).on('ready', function(){
+				$("#country_id").change(function(event) {
+					$country_id = $("#country_id").val()
+					$.post('{{url("estados")}}', {country: $country_id}, function(data) {
+						$('#state_id').html(data)
+					});
+				});
+
+				$("#country_id").change()
+			})
+		</script>
 		<!--ofertas-->
 		<h2>Ofertas</h2>
 		@if ($order == "desc")
-			{{link_to('producto/'.$product->id.'-'.$product->url.'.html?order=asc', 'De menor a mayor precio')}}
+			{{link_to('producto/'.$product->id.'-'.$product->url.'.html?order=asc'.$extraUrl, 'De menor a mayor precio')}}
 		@else
-			{{link_to('producto/'.$product->id.'-'.$product->url.'.html?order=desc', 'De mayor a menor precio')}}
+			{{link_to('producto/'.$product->id.'-'.$product->url.'.html?order=desc'.$extraUrl, 'De mayor a menor precio')}}
 		@endif
 		<ol>
 			@foreach ($offers as $offer)
 				<li>
 					<b>{{$offer->title}}:</b> <span class="price">{{$offer->price}}</span><br>
+					@if ($offer->state)
+						<b>Lugar:</b> {{$offer->state->state}} <br>
+					@endif
 					<b>Descripción:</b><br> <p class="description">{{$offer->description}}</p><br>
 					<b>Tienda:</b> {{link_to('tienda/'.$offer->store->id.'-'.$offer->store->url_seo.'.html', $offer->store->name)}}<br>
 					<b>Logo:</b><br>

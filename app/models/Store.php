@@ -8,4 +8,9 @@ class Store extends Eloquent{
 	public function getOffers(){
 		return $this->hasMany('Offer','store_id');
 	}
+
+	//Perteneca a un usuario
+	public function user(){
+		return $this->belongsTo('User', 'user_id');
+	}
 }

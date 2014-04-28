@@ -49,4 +49,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->email;
 	}
 
+
+	//Tiene una tienda
+	public function store(){
+		return $this->hasOne('Store', 'user_id');
+	}
 }
