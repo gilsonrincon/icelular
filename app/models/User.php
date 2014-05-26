@@ -54,4 +54,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public function store(){
 		return $this->hasOne('Store', 'user_id');
 	}
+
+	//pertenece a un tipo de usuario
+	public function usertype(){
+		return $this->belongsTo('UserType', 'user_type');
+	}
 }

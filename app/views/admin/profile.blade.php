@@ -29,6 +29,9 @@
 	<li>
 		<a href="#tab5" data-toggle="tab">Calificaciones</a>
 	</li>
+	<li>
+		<a href="#tab6" data-toggle="tab">Historial de Paquetes</a>
+	</li>
 	@endif
 </ul>
 
@@ -86,8 +89,6 @@
 					@else
  				<textarea class="form-control html_editor" id="description" name="description"></textarea>
 					@endif
-
-
 			</div>
 		</div>
 
@@ -437,6 +438,7 @@
 			<div id="addressList"></div>
 		@endif
 	</div>
+	{{Form::close()}}
 	<!-- Fin Direcciones / Puntos de venta -->
 	
 	<!--Muestra las ofertas o productos -->
@@ -453,7 +455,9 @@
 					<td>{{$offer->price}}</td>
 					<td>
 						{{link_to('admin/profile/offer/'.$offer->id.'/edit', 'Editar', array('class'=>'delete btn btn-info'))}}
-						{{link_to('admin/profile/offer/'.$offer->id.'/delete', 'Borrar', array('class'=>'delete btn btn-danger'))}}
+						{{Form::open(array('url'=>'admin/profile/offer/'.$offer->id.'/delete', 'method'=>'DELETE'))}}
+							{{Form::submit('Borrar', array('class'=>'delete btn btn-danger'))}}
+						{{Form::close()}}
 					</td>
 				</tr>
 			@endforeach
@@ -509,8 +513,23 @@
 		</table>
 	</div>
 
-</div>
+	<div id="tab6" class="tab-pane fade active in">
+		<h3>Historial de paquetes</h3>
+		<table class="table">
+			<tr>
+				<th>NOMBRE DEL PAQUETE</th>
+				<th>FECHA DE LA COMPRA</th>
+			</tr>
 
-{{Form::close()}}
+			@foreach ($store->packeages as $pack)
+				<tr>
+					<td>{{$pack->name}}</td>
+					<td>{{$pack->created_at}}</td>
+				</tr>
+			@endforeach
+		</table>
+	</div>
+
+</div>
 @stop
 

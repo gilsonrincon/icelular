@@ -49,6 +49,7 @@
 			</nav>	
 			<section id="izquierda" class="row">
 				@if(!isset($hide_menu))
+					<?php if(Auth::user()->user_type == 1): ?>
 					<nav id="menu_lateral" class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
 						<ul class="nav nav-pills nav-stacked">
 							<li class="nav_header">
@@ -83,6 +84,9 @@
 									<li id="complaints">
 										{{link_to('admin/quejas', 'Quejas de calificaciones')}}
 									</li>
+									<li id="packeages">
+										{{link_to('admin/packeages', 'Paquetes')}}
+									</li>
 								</ul>
 							</li>
 							<li class="nav_header">
@@ -99,19 +103,49 @@
 									<li id="banners">
 										{{ link_to("admin/banners","Administrar Banners")}}
 									</li>
+									<li id="users">
+										{{ link_to("admin/users","Usuarios")}}
+									</li>
 									<li id="cms">
 										{{ link_to("admin/cms","Contenido del sitio (CMS)")}}
 									</li>
 									<li id="countries">
 										{{ link_to("admin/countries","Paises")}}
 									</li>
+									<?php if(Auth::user()->store): ?>
+										<li id="profile">
+											{{ link_to("admin/profile", 'Perfil')}}
+										</li>
+									<?php endif; ?>
 								</ul>
 							</li>
 						</ul>
 					</nav>
-					<article id="contenido" class="col-xs-8 col-sm-9 col-md-9 col-lg-9">@yield('body')</article>
+					<?php endif; ?>
+					<article id="contenido" class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
+						@if(isset($page_name))
+							@if ($page_name == 'stores')
+								<div class="searchContainer">
+									{{Form::open(array('method'=>'GET', 'id'=>'search-form'))}}
+										{{Form::text('search', '', array('placeholder'=>'Buscar', 'class'=>'form-control'))}}
+										<span id="search" class="glyphicon glyphicon-search">&nbsp;</span>
+									{{Form::close()}}
+								</div>
+								<br><br>
+								<script>
+									$('#search').click(function(event) {
+										$("#search-form").submit();
+									});
+								</script>
+							@endif
+						@endif
+						@yield('body')</article>
 				@else
-					<article id="contenido" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">@yield('body')</article>
+					<article id="contenido" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						@if(isset($page_name))
+							
+						@endif
+						@yield('body')</article>
 				@endif
 			</section>
 			

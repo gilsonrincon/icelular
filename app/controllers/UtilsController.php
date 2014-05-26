@@ -28,18 +28,14 @@ class UtilsController extends BaseController {
 		//si vienen variables post evalua y autentica
 		if(Input::has('email') && Input::has('password')){
 			if(Auth::attempt(array('email'=>Input::get('email'),'password'=>Input::get('password')))){
-				$users = User::where('email', '=', Input::get('email'))->get();
-				foreach ($users as $user) {
-					if(isset($user->store))
-						Session::put('store', $user->store->id);
-				}
-				
-				return Redirect::to('admin');
-			}else{
-				$data['message']='E-mail o contraseña incorrectos.';
+				if(Auth::user()->user_type == 1)
+					return Redirect::to('admin');
+				return Redirect::to('admin/profile');
+			} else {
+				$data['message'] = 'E-mail o contraseña incorrectos.';
 				return View::make('login',$data);
 			}
-		}else{
+		} else {
 			return View::make('login');
 		}
 	}

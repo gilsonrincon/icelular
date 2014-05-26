@@ -2,6 +2,7 @@
 
 namespace Admin;
 
+use Auth;
 use View;
 use BaseController;
 use Input;
@@ -37,10 +38,20 @@ Class StoreController extends BaseController{
 		}else{
 			$page=1;
 		}
+
+		if(Input::has('search') and Input::get('search') != ""):
+			$search = Input::get('search');
+			$data['search'] = $search; 
+		endif;
 		
 		if(Store::all()->count()>0){
 			//obtiene la lista de todas las tiendas
-			$stores=Store::where('id','>','0')->orderBy($order_field,$order_dir)->paginate(Configuration::where('name','=','page_count')->first()->value);
+			if(!is_null($data['search'])):
+				$stores=Store::where('name','LIKE', $data['search'])->orderBy($order_field,$order_dir)->paginate(Configuration::where('name','=','page_count')->first()->value);
+			else:
+				$stores=Store::where('id','>','0')->orderBy($order_field,$order_dir)->paginate(Configuration::where('name','=','page_count')->first()->value);
+			endif;
+			
 		}else{
 			$stores=Store::all();
 		}
@@ -234,10 +245,12 @@ Class StoreController extends BaseController{
 	/*Vista de la tienda individual*/
 	public function showStore()
 	{
-		$store=Store::find(Session::get('store'));
+		$store = Store::find(Auth::user()->id);
+		if(count($store) == 0)
+			return Redirect::to('/');
 
-		$data['store']=$store;
-		$data['page_name']='profile';
+		$data['store'] = $store;
+		$data['page_name'] = 'profile';
 		
 		return View::make('admin.profile',$data);
 	}
@@ -286,7 +299,8 @@ Class StoreController extends BaseController{
 		$products = Product::all();
 		$data['products'] = $products;
 		$data['countries'] = Country::all();
-
+		$data['page_name'] = 'profile';
+		
 		return View::make('admin.profileOffer', $data);
 	}	
 
@@ -314,8 +328,10 @@ Class StoreController extends BaseController{
 	}
 
 	//borrar una oferta desde el perfil
-	public function storeProfileOffer()
+	public function destroyProfileOffer($id)
 	{
+		$offer = Offer::find($id);
+		$offer->delete();
 		return Redirect::to('admin/profile');
 	}
 }

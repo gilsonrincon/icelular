@@ -26,7 +26,7 @@ class CategoriesController extends BaseController{
 		if(Input::has('order_field')){
 			$order_field=Input::get('order_field');
 		}else{
-			$order_field='position';
+			$order_field='id';
 		}
 		
 		if(Input::has('order_dir')){

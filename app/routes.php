@@ -216,7 +216,7 @@ Route::group(array('before'=>"auth"), function(){
 	//Guardar la nueva oferta desde el perfil
 	Route::post('admin/profile/offer/store', 'Admin\StoreController@storeOfferProfile');
 	//Borrar la oferta
-	Route::post('admin/profile/offer/delete', 'Admin\StoreController@destroyProfileOffer');
+	Route::delete('admin/profile/offer/{id}/delete', 'Admin\StoreController@destroyProfileOffer');
 	//Reportar una calificación
 	Route::get('admin/report/{id}', 'Admin\ComplaintController@create');
 	Route::post('admin/report', 'Admin\ComplaintController@store');
@@ -312,6 +312,23 @@ Route::group(array('before'=>"auth"), function(){
 	/**************************************************
 	 * FIN GESTIÓN DE BANNERS
 	**************************************************/
+
+
+	/*Gestion de los usuarios*/
+	Route::get('admin/users', 'Admin\usersController@index');
+	Route::get('admin/users/new', 'Admin\usersController@create');
+	Route::post('admin/users/new', 'Admin\usersController@store');
+	Route::get('admin/users/{id}/edit', 'Admin\usersController@edit');
+	Route::post('admin/users/{id}/edit', 'Admin\usersController@update');
+	Route::post('admin/users/destroy', 'Admin\usersController@destroy');
+
+
+	/*Gestion de rutas*/
+	Route::get('admin/packeages', 'Admin\packeagesController@index');
+	Route::get('admin/packeages/new', 'Admin\packeagesController@create');
+	Route::post('admin/packeages/new', 'Admin\packeagesController@store');
+	Route::post('admin/packeages/destroy', 'Admin\packeagesController@destroy');
+
 });
 /****************************************************************
  * FIN DE LAS RUTAS AGRUPADAS BAJO EL FILTRO DE AUTENTICACIÓN

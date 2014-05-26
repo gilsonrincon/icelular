@@ -21,6 +21,11 @@
 		<a href="#tab2" data-toggle="tab">Direcciones / Puntos de venta</a>
 	</li>
 	@endif
+	@if(isset($store))
+	<li>
+		<a href="#tab3" data-toggle="tab">Paquetes</a>
+	</li>
+	@endif
 </ul>
 
 <div id="myTabContent" class="tab-content">
@@ -157,7 +162,27 @@
 
 	</div>
 	<!-- fin datos generales del producto -->
-
+	@if(isset($store))
+		<div id="tab3" class="tab-pane fade">
+			<h3>Historial de paquetes</h3>
+			<table class="table">
+				<tr>
+					<th>
+						Paquete
+					</th>
+					<th>
+						Fecha en que se compro
+					</th>
+				</tr>
+				@foreach ($store->packeages as $packeage)
+					<tr>
+						<td>{{$packeage->packeage->name}}</td>
+						<td>{{$packeage->created_at}}</td>
+					</tr>
+				@endforeach
+			</table>
+		</div>
+	@endif
 	<!-- Direcciones / Puntos de venta -->
 	<div id="tab2" class="tab-pane fade">
 		@if(isset($store))

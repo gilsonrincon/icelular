@@ -357,3 +357,33 @@ footer p{
 .item_attr_group h3 .txt{
 	cursor: pointer;
 }
+
+td form {
+	display: inline-block;
+}
+
+.searchContainer {
+	position: relative;
+}
+
+.searchContainer span {
+	background: #52B3ED;
+	color: #fff;
+	display: block;
+	height: 34px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 60px;
+}
+
+.searchContainer span:hover {
+	background: #428BCA;
+	cursor: pointer;
+}
+
+.glyphicon-search:before {
+	left: 23px;
+	position: relative;
+	top: 13px;
+}

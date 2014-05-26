@@ -23,32 +23,69 @@
 						</th>
 						<th @if($order_field=="name")class="ordering @if($order_dir=='asc') asc @else desc @endif"@endif>
 							@if($order_dir=='asc')
-								{{ link_to('admin/stores?page='.$page.'&order_field=name&order_dir=desc',"NOMBRE ▼") }}
+								@if (isset($search))
+									{{ link_to('admin/stores?page='.$page.'&order_field=name&order_dir=desc&search='.$search,"NOMBRE ▼") }}
+								@else
+									{{ link_to('admin/stores?page='.$page.'&order_field=name&order_dir=desc',"NOMBRE ▼") }}
+								@endif
+								
 							@else
-								{{ link_to('admin/stores?page='.$page.'&order_field=name&order_dir=asc',"NOMBRE ▲") }}
+								@if (isset($search))
+									{{ link_to('admin/stores?page='.$page.'&order_field=name&order_dir=asc&search='.$search,"NOMBRE ▲") }}
+								@else
+									{{ link_to('admin/stores?page='.$page.'&order_field=name&order_dir=asc',"NOMBRE ▲") }}
+								@endif
+								
 							@endif
 						</th>
 						<th @if($order_field=="email")class="ordering @if($order_dir=='asc') asc @else desc @endif"@endif>
 							@if($order_dir=='asc')
-								{{ link_to('admin/stores?page='.$page.'&order_field=email&order_dir=desc',"E-MAIL") }}
+								@if (isset($search))
+									{{ link_to('admin/stores?page='.$page.'&order_field=email&order_dir=desc&search='.$search,"E-MAIL") }}
+								@else
+									{{ link_to('admin/stores?page='.$page.'&order_field=email&order_dir=desc',"E-MAIL") }}
+								@endif
 							@else
-								{{ link_to('admin/stores?page='.$page.'&order_field=email&order_dir=asc',"E-MAIL") }}
+								@if (isset($search))
+									{{ link_to('admin/stores?page='.$page.'&order_field=email&order_dir=asc&search='.$search,"E-MAIL") }}
+								@else
+									{{ link_to('admin/stores?page='.$page.'&order_field=email&order_dir=asc',"E-MAIL") }}
+								@endif
 							@endif
 						</th>
 						<th @if($order_field=="url")class="ordering @if($order_dir=='asc') asc @else desc @endif"@endif>
 							@if($order_dir=='asc')
-								{{ link_to('admin/stores?page='.$page.'&order_field=url&order_dir=desc',"URL") }}
+								@if (isset($search))
+									{{ link_to('admin/stores?page='.$page.'&order_field=url&order_dir=desc&search='.$search,"URL") }}
+								@else
+									{{ link_to('admin/stores?page='.$page.'&order_field=url&order_dir=desc',"URL") }}
+								@endif
 							@else
-								{{ link_to('admin/stores?page='.$page.'&order_field=url&order_dir=asc',"URL") }}
+								@if (isset($search))
+									{{ link_to('admin/stores?page='.$page.'&order_field=url&order_dir=asc&search='.$search,"URL") }}
+								@else
+									{{ link_to('admin/stores?page='.$page.'&order_field=url&order_dir=asc',"URL") }}
+								@endif
 							@endif
 						</th>
 						<th @if($order_field=="url")class="ordering @if($order_dir=='asc') asc @else desc @endif"@endif>
 							@if($order_dir=='asc')
-								{{ link_to('admin/stores?page='.$page.'&order_field=clics&order_dir=desc',"CLICS DISPONIBLES") }}
+								@if (isset($search))
+									{{ link_to('admin/stores?page='.$page.'&order_field=clics&order_dir=desc&search='.$search,"CLICS DISPONIBLES") }}
+								@else
+									{{ link_to('admin/stores?page='.$page.'&order_field=clics&order_dir=desc',"CLICS DISPONIBLES") }}
+								@endif
+								
 							@else
-								{{ link_to('admin/stores?page='.$page.'&order_field=clics&order_dir=asc',"CLICS DISPONIBLES") }}
+								@if (isset($search))
+									{{ link_to('admin/stores?page='.$page.'&order_field=clics&order_dir=asc&search='.$search,"CLICS DISPONIBLES") }}
+								@else
+									{{ link_to('admin/stores?page='.$page.'&order_field=clics&order_dir=asc',"CLICS DISPONIBLES") }}
+								@endif
+								
 							@endif
 						</th>
+						<th>PAQUETES</th>
 						<th>LOGO</th>
 					</tr>
 				</thead>
@@ -60,6 +97,13 @@
 							<td><a href="mailto:{{$store->email}}" target="_blank">{{$store->email}}</a></td>
 							<td><a href="{{$store->url}}" target="_blank">{{$store->url}}</a></td>
 							<td>{{$store->clics}}</td>
+							<td>
+								@if ($store->packeages)
+									@foreach ($store->packeages as $packeage)
+										{{$packeage->name}}
+									@endforeach
+								@endif
+							</td>
 							<td><img style="max-height: 130px;" alt="" class="img-responsive" src="/img/t/{{$store['logo']}}" /></td>
 						</tr>
 					@endforeach
