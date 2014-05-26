@@ -37,10 +37,26 @@ Class ProductController extends BaseController{
 		}else{
 			$page=1;
 		}
+
+		if(Input::has('search') and Input::get('search') != ""):
+			$search = Input::get('search');
+			$data['search'] = $search; 
+		endif;
 		
 		if(Product::all()->count()>0){
 			//obtiene la lista de todos los productos
-			$products=Product::where('id','>','0')->orderBy($order_field,$order_dir)->paginate(Configuration::where('name','=','page_count')->first()->value);
+			if(isset($data)):
+				$products = Product::where('name','LIKE', "%".$data['search']."%")
+							->orWhere('short_description', 'LIKE', "%".$data['search']."%")
+							->orWhere('description', 'LIKE', "%".$data['search']."%")
+							->orderBy($order_field,$order_dir)
+							->paginate(Configuration::where('name','=','page_count')->first()->value);
+			else:
+				$products = Product::where('id','>','0')
+							->orderBy($order_field,$order_dir)
+							->paginate(Configuration::where('name','=','page_count')->first()->value);
+			endif;
+			
 		}else{
 			$products=Product::all();
 		}

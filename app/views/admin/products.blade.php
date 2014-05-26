@@ -23,16 +23,34 @@
 						</th>
 						<th @if($order_field=="position")class="ordering @if($order_dir=='asc') asc @else desc @endif"@endif>
 							@if($order_dir=='asc')
-								{{ link_to('admin/products?page='.$page.'&order_field=position&order_dir=desc',"# ▼", array('title'=>'Posición del producto', 'class'=>'tip')) }}
+								@if (isset($search))
+									{{ link_to('admin/products?page='.$page.'&order_field=position&order_dir=desc&search='.$search,"# ▼", array('title'=>'Posición del producto', 'class'=>'tip')) }}
+								@else
+									{{ link_to('admin/products?page='.$page.'&order_field=position&order_dir=desc',"# ▼", array('title'=>'Posición del producto', 'class'=>'tip')) }}
+								@endif
+								
 							@else
-								{{ link_to('admin/products?page='.$page.'&order_field=position&order_dir=asc',"# ▲", array('title'=>'Posición del producto', 'class'=>'tip')) }}
+								@if (isset($search))
+									{{ link_to('admin/products?page='.$page.'&order_field=position&order_dir=asc&search='.$search,"# ▲", array('title'=>'Posición del producto', 'class'=>'tip')) }}
+								@else
+									{{ link_to('admin/products?page='.$page.'&order_field=position&order_dir=asc',"# ▲", array('title'=>'Posición del producto', 'class'=>'tip')) }}
+								@endif
 							@endif
 						</th>
 						<th @if($order_field=="name")class="ordering @if($order_dir=='asc') asc @else desc @endif"@endif>
 							@if($order_dir=='asc')
-								{{ link_to('admin/products?page='.$page.'&order_field=name&order_dir=desc',"NOMBRE") }}
+								@if($search)
+									{{ link_to('admin/products?page='.$page.'&order_field=name&order_dir=desc&search='.$search,"NOMBRE") }}
+								@else
+									{{ link_to('admin/products?page='.$page.'&order_field=name&order_dir=desc',"NOMBRE") }}
+								@endif
+								
 							@else
-								{{ link_to('admin/products?page='.$page.'&order_field=name&order_dir=asc',"NOMBRE") }}
+								@if($search)
+									{{ link_to('admin/products?page='.$page.'&order_field=name&order_dir=asc&search='.$search,"NOMBRE") }}
+								@else:
+									{{ link_to('admin/products?page='.$page.'&order_field=name&order_dir=asc',"NOMBRE") }}
+								@endif
 							@endif
 						</th>
 						<th>IMAGEN PRINCIPAL</th>

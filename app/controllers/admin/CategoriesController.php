@@ -49,10 +49,10 @@ class CategoriesController extends BaseController{
 		if(Category::all()->count()>0){
 			//obtiene la lista de todas las categorías
 			if(isset($data)):
-				$categories = Category::where('name','LIKE', $data['search'])
-								->orWhere('short_description', 'LIKE', $data['search'])
-								->orWhere('description', 'LIKE', $data['search'])
-								->orWhere('url', 'LIKE', $data['search'])
+				$categories = Category::where('name','LIKE', "%".$data['search']."%")
+								->orWhere('short_description', "%".'LIKE', $data['search']."%")
+								->orWhere('description', 'LIKE', "%".$data['search']."%")
+								->orWhere('url', 'LIKE', "%".$data['search']."%")
 								->orderBy($order_field,$order_dir)
 								->paginate(Configuration::where('name','=','page_count')->first()->value);
 			else:
