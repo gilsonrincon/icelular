@@ -23,23 +23,51 @@
 						</th>
 						<th @if($order_field=="position")class="ordering @if($order_dir=='asc') asc @else desc @endif"@endif>
 							@if($order_dir=='asc')
-								{{ link_to('admin/categories?page='.$page.'&order_field=position&order_dir=desc',"# ▼", array('title'=>'Posición de la categoría', 'class'=>'tip')) }}
+								@if (isset($search))
+									{{ link_to('admin/categories?page='.$page.'&order_field=position&order_dir=desc&search='.$search,"# ▼", array('title'=>'Posición de la categoría', 'class'=>'tip')) }}
+								@else
+									{{ link_to('admin/categories?page='.$page.'&order_field=position&order_dir=desc',"# ▼", array('title'=>'Posición de la categoría', 'class'=>'tip')) }}
+								@endif
 							@else
-								{{ link_to('admin/categories?page='.$page.'&order_field=position&order_dir=asc',"# ▲", array('title'=>'Posición de la categoría', 'class'=>'tip')) }}
+								@if (isset($search))
+									{{ link_to('admin/categories?page='.$page.'&order_field=position&order_dir=asc&search='.$search,"# ▲", array('title'=>'Posición de la categoría&search=', 'class'=>'tip')) }}
+								@else
+									{{ link_to('admin/categories?page='.$page.'&order_field=position&order_dir=asc',"# ▲", array('title'=>'Posición de la categoría', 'class'=>'tip')) }}
+								@endif
+								
 							@endif
 						</th>
 						<th @if($order_field=="name")class="ordering @if($order_dir=='asc') asc @else desc @endif"@endif>
 							@if($order_dir=='asc')
-								{{ link_to('admin/categories?page='.$page.'&order_field=name&order_dir=desc',"NOMBRE") }}
+								@if (isset($search))
+									{{ link_to('admin/categories?page='.$page.'&order_field=name&order_dir=desc&search='.$search,"NOMBRE") }}
+								@else
+									{{ link_to('admin/categories?page='.$page.'&order_field=name&order_dir=desc',"NOMBRE") }}
+								@endif
 							@else
-								{{ link_to('admin/categories?page='.$page.'&order_field=name&order_dir=asc',"NOMBRE") }}
+								@if (isset($search))
+									{{ link_to('admin/categories?page='.$page.'&order_field=name&order_dir=asc&search='.$search,"NOMBRE") }}
+								@else
+									{{ link_to('admin/categories?page='.$page.'&order_field=name&order_dir=asc',"NOMBRE") }}
+								@endif
+								
 							@endif
 						</th>
 						<th @if($order_field=="parent_id")class="ordering @if($order_dir=='asc') asc @else desc @endif"@endif>
 							@if($order_dir=='asc')
-								{{ link_to('admin/categories?page='.$page.'&order_field=parent_id&order_dir=desc',"CATEGORÍA PADRE") }}
+								@if (isset($search))
+									{{ link_to('admin/categories?page='.$page.'&order_field=parent_id&order_dir=desc&search='.$search,"CATEGORÍA PADRE") }}
+								@else
+									{{ link_to('admin/categories?page='.$page.'&order_field=parent_id&order_dir=desc',"CATEGORÍA PADRE") }}
+								@endif
+
 							@else
-								{{ link_to('admin/categories?page='.$page.'&order_field=parent_id&order_dir=asc',"CATEGORÍA PADRE") }}
+								@if (isset($search))
+									{{ link_to('admin/categories?page='.$page.'&order_field=parent_id&order_dir=asc&search='.$search,"CATEGORÍA PADRE") }}
+								@else
+									{{ link_to('admin/categories?page='.$page.'&order_field=parent_id&order_dir=asc',"CATEGORÍA PADRE") }}
+								@endif
+								
 							@endif
 						</th>
 						<th>

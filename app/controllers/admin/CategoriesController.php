@@ -40,10 +40,27 @@ class CategoriesController extends BaseController{
 		}else{
 			$page=1;
 		}
+
+		if(Input::has('search') and Input::get('search') != ""):
+			$search = Input::get('search');
+			$data['search'] = $search; 
+		endif;
 		
 		if(Category::all()->count()>0){
 			//obtiene la lista de todas las categorías
-			$categories=Category::where('id','>','0')->orderBy($order_field,$order_dir)->paginate(Configuration::where('name','=','page_count')->first()->value);
+			if(isset($data)):
+				$categories = Category::where('name','LIKE', $data['search'])
+								->orWhere('short_description', 'LIKE', $data['search'])
+								->orWhere('description', 'LIKE', $data['search'])
+								->orWhere('url', 'LIKE', $data['search'])
+								->orderBy($order_field,$order_dir)
+								->paginate(Configuration::where('name','=','page_count')->first()->value);
+			else:
+				$categories = Category::where('id','>','0')
+								->orderBy($order_field,$order_dir)
+								->paginate(Configuration::where('name','=','page_count')->first()->value);
+			endif;
+			
 		}else{
 			$categories=Category::all();
 		}
