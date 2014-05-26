@@ -46,8 +46,11 @@ Class StoreController extends BaseController{
 		
 		if(Store::all()->count()>0){
 			//obtiene la lista de todas las tiendas
-			if(!is_null($data['search'])):
-				$stores=Store::where('name','LIKE', $data['search'])->orderBy($order_field,$order_dir)->paginate(Configuration::where('name','=','page_count')->first()->value);
+			if(isset($data)):
+				$stores=Store::where('name','LIKE', $data['search'])
+							->orWhere('email', 'LIKE', $data['search'])
+							->orderBy($order_field,$order_dir)
+							->paginate(Configuration::where('name','=','page_count')->first()->value);
 			else:
 				$stores=Store::where('id','>','0')->orderBy($order_field,$order_dir)->paginate(Configuration::where('name','=','page_count')->first()->value);
 			endif;

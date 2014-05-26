@@ -368,6 +368,7 @@ td form {
 
 .searchContainer span {
 	background: #52B3ED;
+	border-radius: 0 4px 4px 0px;
 	color: #fff;
 	display: block;
 	height: 34px;

@@ -124,16 +124,28 @@
 					<?php endif; ?>
 					<article id="contenido" class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
 						@if(isset($page_name))
-							@if ($page_name == 'stores')
+							@if ($page_name == 'stores' or $page_name == 'products' or $page_name == 'categories')
 								<div class="searchContainer">
-									{{Form::open(array('method'=>'GET', 'id'=>'search-form'))}}
-										{{Form::text('search', '', array('placeholder'=>'Buscar', 'class'=>'form-control'))}}
+									@if ($page_name == 'stores')
+										{{Form::open(array('method'=>'GET', 'id'=>'search-form', 'url'=>'admin/stores'))}}
+									@elseif ($page_name == 'products')
+										{{Form::open(array('method'=>'GET', 'id'=>'search-form', 'url'=>'admin/products'))}}
+									@elseif ($page_name == 'categories')
+										{{Form::open(array('method'=>'GET', 'id'=>'search-form', 'url'=>'admin/categories'))}}
+									@endif
+										{{Form::text('search', '', array('placeholder'=>'¿Que desea encontrar en esta sección?', 'class'=>'form-control'))}}
 										<span id="search" class="glyphicon glyphicon-search">&nbsp;</span>
 									{{Form::close()}}
 								</div>
 								<br><br>
 								<script>
 									$('#search').click(function(event) {
+										if($(".searchContainer form input[type=text]").val() == ""){
+											alert("No ha indicado que esta buscando")
+											$(".searchContainer form input[type=text]").focus()
+											event.preventDefault()
+											return false
+										}
 										$("#search-form").submit();
 									});
 								</script>
