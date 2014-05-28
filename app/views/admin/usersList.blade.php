@@ -51,6 +51,9 @@
 								@endif
 							@endif
 						</th>
+						<th>
+							COMERCIO
+						</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -59,8 +62,13 @@
 							<td>{{Form::checkbox('selectall', $user->id, false, array('class'=>'chkItem'))}}</td>
 							<td>{{link_to('admin/users/'.$user->id.'/edit', $user->email)}}</td>
 							<td>{{link_to('admin/users/'.$user->id.'/edit', $user->usertype->type)}}</td>
-						
-							
+							<td>
+								@if ($user->store)
+									{{link_to('admin/stores/'.$user->store->id.'/edit', $user->store->name)}}
+								@else
+									Este usuario no tiene un comercio asignado
+								@endif
+							</td>
 						</tr>
 					@endforeach
 				</tbody>
