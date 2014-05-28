@@ -85,7 +85,7 @@
 										{{link_to('admin/quejas', 'Quejas de calificaciones')}}
 									</li>
 									<li id="packeages">
-										{{link_to('admin/packeages', 'Paquetes')}}
+										{{link_to('admin/packets', 'Paquetes')}}
 									</li>
 								</ul>
 							</li>

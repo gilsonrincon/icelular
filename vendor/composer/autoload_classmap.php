@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddClicksToPackeages' => $baseDir . '/app/database/migrations/2014_05_28_031155_addClicksToPackeages.php',
     'AddClicsColumnStores' => $baseDir . '/app/database/migrations/2013_11_06_110040_add_clics_column_stores.php',
     'AddMapToStores' => $baseDir . '/app/database/migrations/2014_04_24_210834_AddMapToStores.php',
     'AddStateToOffers' => $baseDir . '/app/database/migrations/2014_04_24_041929_AddStateToOffers.php',
@@ -19,7 +20,7 @@ return array(
     'Admin\\ComplaintController' => $baseDir . '/app/controllers/admin/ComplaintController.php',
     'Admin\\CountriesController' => $baseDir . '/app/controllers/admin/CountriesController.php',
     'Admin\\OfferController' => $baseDir . '/app/controllers/admin/OfferController.php',
-    'Admin\\PackeagesController' => $baseDir . '/app/controllers/admin/packeagesController.php',
+    'Admin\\PacketsController' => $baseDir . '/app/controllers/admin/packetsController.php',
     'Admin\\ProductController' => $baseDir . '/app/controllers/admin/ProductController.php',
     'Admin\\ReportClicks' => $baseDir . '/app/controllers/admin/ReportClicks.php',
     'Admin\\Reviews' => $baseDir . '/app/controllers/admin/Reviews.php',
@@ -711,6 +712,7 @@ return array(
     'PHPParser_Unserializer' => $vendorDir . '/nikic/php-parser/lib/PHPParser/Unserializer.php',
     'PHPParser_Unserializer_XML' => $vendorDir . '/nikic/php-parser/lib/PHPParser/Unserializer/XML.php',
     'PackeagesPurchased' => $baseDir . '/app/database/migrations/2014_05_23_214550_PackeagesPurchased.php',
+    'PacketPurchased' => $baseDir . '/app/models/PacketPurchased.php',
     'Patchwork\\PHP\\Shim\\Iconv' => $vendorDir . '/patchwork/utf8/class/Patchwork/PHP/Shim/Iconv.php',
     'Patchwork\\PHP\\Shim\\Intl' => $vendorDir . '/patchwork/utf8/class/Patchwork/PHP/Shim/Intl.php',
     'Patchwork\\PHP\\Shim\\Mbstring' => $vendorDir . '/patchwork/utf8/class/Patchwork/PHP/Shim/Mbstring.php',
@@ -989,6 +991,7 @@ return array(
     'Psr\\Log\\LoggerInterface' => $vendorDir . '/psr/log/Psr/Log/LoggerInterface.php',
     'Psr\\Log\\LoggerTrait' => $vendorDir . '/psr/log/Psr/Log/LoggerTrait.php',
     'Psr\\Log\\NullLogger' => $vendorDir . '/psr/log/Psr/Log/NullLogger.php',
+    'RenameToPackets' => $baseDir . '/app/database/migrations/2014_05_28_171544_RenameToPackets.php',
     'Review' => $baseDir . '/app/models/Review.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
     'Stack\\Builder' => $vendorDir . '/stack/builder/src/Stack/Builder.php',

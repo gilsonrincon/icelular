@@ -15,6 +15,7 @@ use StoreAddress;
 use Country;
 use State;
 use User;
+use ClicksPacket;
 use Session;
 
 Class StoreController extends BaseController{
@@ -248,12 +249,13 @@ Class StoreController extends BaseController{
 	/*Vista de la tienda individual*/
 	public function showStore()
 	{
-		$store = Store::find(Auth::user()->id);
+		$store = Auth::user()->store;
 		if(count($store) == 0)
 			return Redirect::to('/');
 
 		$data['store'] = $store;
 		$data['page_name'] = 'profile';
+		$data['packets'] = ClicksPacket::all();
 		
 		return View::make('admin.profile',$data);
 	}

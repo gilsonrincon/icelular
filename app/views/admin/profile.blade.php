@@ -32,6 +32,9 @@
 	<li>
 		<a href="#tab6" data-toggle="tab">Historial de Paquetes</a>
 	</li>
+	<li>
+		<a href="#tab7" data-toggle="tab">Comprar un paquete</a>
+	</li>
 	@endif
 </ul>
 
@@ -442,7 +445,7 @@
 	<!-- Fin Direcciones / Puntos de venta -->
 	
 	<!--Muestra las ofertas o productos -->
-	<div id="tab3" class="tab-pane fade active in">
+	<div id="tab3" class="tab-pane fade">
 		<table class="table">
 			<tr>
 				<th>Producto</th>
@@ -465,7 +468,7 @@
 		{{link_to('admin/profile/offer/create', 'Nueva Oferta', array('class'=>'btn btn-success'))}}
 	</div>
 	<!-- Muestra los clics -->
-	<div id="tab4" class="tab-pane fade active in">
+	<div id="tab4" class="tab-pane fade">
 		<table class="table">
 			<tr>
 				<th>Oferta</th>
@@ -485,7 +488,7 @@
 	</div>
 	
 	<!-- Muestra los comentarios -->
-	<div id="tab5" class="tab-pane fade active in">
+	<div id="tab5" class="tab-pane fade">
 		<table class="table">
 			<tr>
 				<th>Oferta</th>
@@ -513,18 +516,67 @@
 		</table>
 	</div>
 
-	<div id="tab6" class="tab-pane fade active in">
+	<div id="tab6" class="tab-pane fade">
 		<h3>Historial de paquetes</h3>
 		<table class="table">
 			<tr>
 				<th>NOMBRE DEL PAQUETE</th>
 				<th>FECHA DE LA COMPRA</th>
+				<th>ESTADO</th>
+				<th>FECHA EN QUE SE APROVO</th>
 			</tr>
 
 			@foreach ($store->packeages as $pack)
 				<tr>
-					<td>{{$pack->name}}</td>
+					<td>{{$pack->packet->name}}</td>
 					<td>{{$pack->created_at}}</td>
+					<td>
+						@if ($pack->approved == 0)
+							En espera
+						@else
+							Aprovado
+						@endif
+					</td>
+					<td>
+						@if ($pack->approved == 1)
+							{{$pack->updated_at}}
+						@endif
+					</td>
+				</tr>
+			@endforeach
+		</table>
+	</div>
+
+	<div id="tab7" class="tab-pane fade">
+		<table class="table">
+			<tr>
+				<th>
+					Nombre del paquete
+				</th>
+				<th>
+					Numero de clicks
+				</th>
+				<th>
+					Precio
+				</th>
+				<th>
+					
+				</th>
+			</tr>
+			@foreach ($packets as $packet)
+				<tr>
+					<td>
+						{{$packet->name}}
+					</td>
+					<td>
+						{{$packet->clicks}}
+					</td>
+					<td>
+						{{$packet->value}}
+					</td>
+					<td>
+						{{link_to('admin/packet/'.$packet->id.'/buy', 'Comprar', array('class'=>'btn btn-success'))}}
+					</td>
 				</tr>
 			@endforeach
 		</table>

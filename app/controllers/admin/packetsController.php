@@ -7,10 +7,12 @@ use Input;
 use Configuration;
 use Redirect;
 use ClicksPacket;
+use PacketPurchased;
 use Session;
 use Hash;
+use Auth;
 
-class PackeagesController extends \BaseController {
+class PacketsController extends \BaseController {
 
 	//Lista de paquetes
 	public function index()
@@ -48,7 +50,7 @@ class PackeagesController extends \BaseController {
 		$data['page'] = $page;
 		$data['page_name'] = 'packeages';
 
-		return View::make('admin.packeagesList', $data);
+		return View::make('admin.packetsList', $data);
 	}
 
 	//Mostrar el formulario para crear un nuevo usuario
@@ -56,7 +58,7 @@ class PackeagesController extends \BaseController {
 	{
 		$data['page_name'] = 'packeages';
 		
-		return View::make('admin.packeagesNew', $data);
+		return View::make('admin.packetsNew', $data);
 	}
 
 	//Guardar una nueva tienda
@@ -65,8 +67,9 @@ class PackeagesController extends \BaseController {
 		$packeage = new ClicksPacket();
 		$packeage->name = Input::get('name');
 		$packeage->value = Input::get('value');
+		$packeage->clicks = Input::get('clicks');
 		$packeage->save();
-		return Redirect::to('admin/packeages');
+		return Redirect::to('admin/packets');
 	}
 
 
@@ -100,7 +103,42 @@ class PackeagesController extends \BaseController {
 			$packet->delete();
 		}
 		
-		return Redirect::to('admin/packeages');
+		return Redirect::to('admin/packets');
 	}
 
+	//Comprar un paquete
+	public function buy($id)
+	{
+		$store = Auth::user()->store;
+		if(count($store) == 0)
+			return Redirect::to('/');
+
+		$data['packet'] = ClicksPacket::find($id);
+		$data['store'] = $store;
+
+		return View::make('admin.packetBuy', $data);
+
+	}
+
+	//Accion al comprar un paquete por consignación
+	public function buyAction($id)
+	{
+		$store = Auth::user()->store;
+		if(count($store) == 0)
+			return Redirect::to('/');
+
+		$buy = new PacketPurchased();
+		$buy->store_id = Auth::user()->store->id;
+		$buy->packeage_id = $id;
+		$buy->approved = false;
+		$buy->save();
+
+		return Redirect::to('admin/packet/'.$id.'/buy/info');
+	}
+
+	public function buyInfo($id)
+	{
+		$data['packet'] = ClicksPacket::find($id);
+		return View::make('admin.packetBuyInfo', $data);
+	}
 }

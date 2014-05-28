@@ -8,8 +8,8 @@
 	
 	<div class="row">
 		<div class="well well-lg" id="option_buttons">
-			{{link_to('admin/packeages/new','Nuevo',array('class'=>'bt_new'))}}
-			{{link_to('#','Eliminar',array('class'=>'bt_remove', 'id'=>'btEliminar'))}}
+			{{link_to('admin/packets/new','Nuevo',array('class'=>'bt_new'))}}
+			<!--{{link_to('#','Eliminar',array('class'=>'bt_remove', 'id'=>'btEliminar'))}}-->
 		</div>
 	</div>
 	
@@ -35,6 +35,13 @@
 								{{ link_to('admin/packeages?page='.$page.'&order_field=value&order_dir=asc',"VALOR") }}
 							@endif
 						</th>
+						<th @if($order_field=="clicks")class="ordering @if($order_dir=='asc') asc @else desc @endif"@endif>
+							@if($order_dir=='asc')
+								{{ link_to('admin/packeages?page='.$page.'&order_field=clicks&order_dir=desc',"CLICKS") }}
+							@else
+								{{ link_to('admin/packeages?page='.$page.'&order_field=clicks&order_dir=asc',"CLICKS") }}
+							@endif
+						</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -43,6 +50,7 @@
 							<td>{{Form::checkbox('selectall', $pack->id, false, array('class'=>'chkItem'))}}</td>
 							<td>{{$pack->name}}</td>
 							<td>{{$pack->value}}</td>
+							<td>{{$pack->clicks}}</td>
 						</tr>
 					@endforeach
 				</tbody>

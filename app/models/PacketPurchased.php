@@ -2,14 +2,14 @@
 
 class PacketPurchased extends Eloquent{
 	
-	protected $table='packeages_purchased';
+	protected $table='packets_purchased';
 
 	public function store()
 	{
 		return $this->belongsTo('Store', 'store_id');
 	}
 
-	public function packeage()
+	public function packet()
 	{
 		return $this->belongsTo('ClicksPacket', 'packeage_id');
 	}

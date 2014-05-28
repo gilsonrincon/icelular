@@ -323,11 +323,16 @@ Route::group(array('before'=>"auth"), function(){
 	Route::post('admin/users/destroy', 'Admin\usersController@destroy');
 
 
-	/*Gestion de rutas*/
-	Route::get('admin/packeages', 'Admin\packeagesController@index');
-	Route::get('admin/packeages/new', 'Admin\packeagesController@create');
-	Route::post('admin/packeages/new', 'Admin\packeagesController@store');
-	Route::post('admin/packeages/destroy', 'Admin\packeagesController@destroy');
+	/*Gestion de paquetes*/
+	Route::get('admin/packets', 'Admin\packetsController@index');
+	Route::get('admin/packets/new', 'Admin\packetsController@create');
+	Route::post('admin/packets/new', 'Admin\packetsController@store');
+	Route::post('admin/packets/destroy', 'Admin\packetsController@destroy');
+
+	//Ruta para comprar un determinado paquete
+	Route::get('admin/packet/{id}/buy', 'Admin\packetsController@buy');
+	Route::post('admin/packet/{id}/buy', 'Admin\packetsController@buyAction');
+	Route::get('admin/packet/{id}/buy/info', 'Admin\packetsController@buyInfo'); 
 
 });
 /****************************************************************
