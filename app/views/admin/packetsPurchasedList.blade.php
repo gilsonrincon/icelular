@@ -28,6 +28,8 @@
 								{{ link_to('admin/packetspurchased?page='.$page.'&order_field=store_id&order_dir=asc',"TIENDA") }}
 							@endif
 						</th>
+						<th>
+						</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -36,6 +38,11 @@
 							<td>{{$pack->packet->name}}</td>
 							<td>{{$pack->packet->value}}</td>
 							<td>{{link_to('admin/stores/'.$pack->store->id.'/edit', $pack->store->name)}}</td>
+							<td>
+								{{Form::open(['url'=>'admin/packetspurchased/'.$pack->id.'/approved'])}}
+								{{Form::submit('Aprovar', ['class'=>'btn btn-success'])}}
+								{{Form::close()}}
+							</td>
 						</tr>
 					@endforeach
 				</tbody>
@@ -110,5 +117,7 @@
 				})
 			});
 		</script>
+	@else
+		<b>No hay paquetes en espera de aprovación.<b>
 	@endif
 @stop

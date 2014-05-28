@@ -336,6 +336,7 @@ Route::group(array('before'=>"auth"), function(){
 
 	Route::get('admin/packetspurchased ', 'Admin\packetsPurchasedController@index');
 	Route::post('admin/packetspurchased', 'Admin\packetsPurchasedController@store');
+	Route::post('admin/packetspurchased/{id}/approved', 'Admin\packetsPurchasedController@update');
 
 });
 /****************************************************************

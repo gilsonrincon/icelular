@@ -7,6 +7,7 @@ use Input;
 use Configuration;
 use PacketPurchased;
 use Session;
+use Redirect;
 
 class PacketsPurchasedController extends \BaseController {
 
@@ -15,7 +16,7 @@ class PacketsPurchasedController extends \BaseController {
 		if(Input::has('order_field')){
 			$order_field=Input::get('order_field');
 		}else{
-			$order_field='name';
+			$order_field='id';
 		}
 		
 		if(Input::has('order_dir')){
@@ -64,7 +65,12 @@ class PacketsPurchasedController extends \BaseController {
 
 	public function update($id)
 	{
-		//
+		$packet = PacketPurchased::find($id);
+		$packet->approved = true;
+		$packet->store->clics = $packet->store->clics + $packet->packet->clicks;
+		$packet->save();
+		$packet->store->save();
+		return Redirect::to('admin/packetspurchased');
 	}
 
 	public function destroy($id)
