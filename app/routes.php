@@ -334,6 +334,9 @@ Route::group(array('before'=>"auth"), function(){
 	Route::post('admin/packet/{id}/buy', 'Admin\packetsController@buyAction');
 	Route::get('admin/packet/{id}/buy/info', 'Admin\packetsController@buyInfo'); 
 
+	Route::get('admin/packetspurchased ', 'Admin\packetsPurchasedController@index');
+	Route::post('admin/packetspurchased', 'Admin\packetsPurchasedController@store');
+
 });
 /****************************************************************
  * FIN DE LAS RUTAS AGRUPADAS BAJO EL FILTRO DE AUTENTICACIÓN

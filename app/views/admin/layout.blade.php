@@ -87,6 +87,9 @@
 									<li id="packeages">
 										{{link_to('admin/packets', 'Paquetes')}}
 									</li>
+									<li id="packetspurchased">
+										{{link_to('admin/packetspurchased', 'Paquetes comprados')}}
+									</li>
 								</ul>
 							</li>
 							<li class="nav_header">
