@@ -124,7 +124,7 @@
 					<?php endif; ?>
 					<article id="contenido" class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
 						@if(isset($page_name))
-							@if ($page_name == 'stores' or $page_name == 'products' or $page_name == 'categories')
+							@if ($page_name == 'stores' or $page_name == 'products' or $page_name == 'categories' or $page_name == 'users')
 								<div class="searchContainer">
 									@if ($page_name == 'stores')
 										{{Form::open(array('method'=>'GET', 'id'=>'search-form', 'url'=>'admin/stores'))}}
@@ -132,6 +132,8 @@
 										{{Form::open(array('method'=>'GET', 'id'=>'search-form', 'url'=>'admin/products'))}}
 									@elseif ($page_name == 'categories')
 										{{Form::open(array('method'=>'GET', 'id'=>'search-form', 'url'=>'admin/categories'))}}
+									@else
+										{{Form::open(array('method'=>'GET', 'id'=>'search-form', 'url'=>'admin/users'))}}
 									@endif
 										{{Form::text('search', '', array('placeholder'=>'¿Que desea encontrar en esta sección?', 'class'=>'form-control'))}}
 										<span id="search" class="glyphicon glyphicon-search">&nbsp;</span>

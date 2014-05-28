@@ -34,11 +34,20 @@ class UsersController extends \BaseController {
 			$page =1 ;
 		}
 
+		if(Input::has('search') and Input::get('search') != ""):
+			$search = Input::get('search');
+			$data['search'] = $search; 
+		endif;
+
 
 		//obtiene la lista de todas los usuarios
 		if(User::all()->count() > 0){
-			
-			$users = User::where('id','>','0')->orderBy($order_field,$order_dir)->paginate(Configuration::where('name','=','page_count')->first()->value);
+			if(isset($data)):
+				$users = User::where('email', 'LIKE', '%'.$data['search'].'%')->orderBy($order_field,$order_dir)->paginate(Configuration::where('name','=','page_count')->first()->value);
+			else:
+				$users = User::where('id','>','0')->orderBy($order_field,$order_dir)->paginate(Configuration::where('name','=','page_count')->first()->value);
+			endif;
+				
 		}else{
 			$users = User::all();
 		}

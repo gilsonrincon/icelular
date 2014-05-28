@@ -23,16 +23,32 @@
 						</th>
 						<th @if($order_field=="email")class="ordering @if($order_dir=='asc') asc @else desc @endif"@endif>
 							@if($order_dir=='asc')
-								{{ link_to('admin/users?page='.$page.'&order_field=email&order_dir=desc',"EMAIL") }}
+								@if (isset($search))
+									{{ link_to('admin/users?page='.$page.'&order_field=email&order_dir=desc&search='.$search,"EMAIL") }}
+								@else
+									{{ link_to('admin/users?page='.$page.'&order_field=email&order_dir=desc',"EMAIL") }}
+								@endif
 							@else
-								{{ link_to('admin/users?page='.$page.'&order_field=email&order_dir=asc',"EMAIL") }}
+								@if (isset($search))
+									{{ link_to('admin/users?page='.$page.'&order_field=email&order_dir=asc&search='.$search,"EMAIL") }}
+								@else
+									{{ link_to('admin/users?page='.$page.'&order_field=email&order_dir=asc',"EMAIL") }}
+								@endif
 							@endif
 						</th>
 						<th @if($order_field=="user_type")class="ordering @if($order_dir=='asc') asc @else desc @endif"@endif>
 							@if($order_dir=='asc')
-								{{ link_to('admin/users?page='.$page.'&order_field=user_type&order_dir=desc',"CATEGORÍA PADRE") }}
+								@if (isset($search))
+									{{ link_to('admin/users?page='.$page.'&order_field=user_type&order_dir=desc&search='.$search,"CATEGORÍA PADRE") }}
+								@else
+									{{ link_to('admin/users?page='.$page.'&order_field=user_type&order_dir=desc',"CATEGORÍA PADRE") }}
+								@endif
 							@else
-								{{ link_to('admin/users?page='.$page.'&order_field=user_type&order_dir=asc',"CATEGORÍA PADRE") }}
+								@if (isset($search))
+									{{ link_to('admin/users?page='.$page.'&order_field=user_type&order_dir=asc&search='.$search,"CATEGORÍA PADRE") }}
+								@else
+									{{ link_to('admin/users?page='.$page.'&order_field=user_type&order_dir=asc',"CATEGORÍA PADRE") }}
+								@endif
 							@endif
 						</th>
 					</tr>
